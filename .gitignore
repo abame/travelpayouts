@@ -1,0 +1,13 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+### Composer template
+composer.phar
+vendor/
+composer.lock
+
+.phpunit.result.cache
+.php-cs-fixer.cache
+.test.token

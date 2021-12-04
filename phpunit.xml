@@ -1,0 +1,21 @@
+<phpunit backupGlobals="true"
+         backupStaticAttributes="false"
+         bootstrap="./vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         forceCoversAnnotation="false"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         verbose="true">
+
+    <testsuites>
+        <testsuite name="abame/travelpayouts">
+            <directory>tests/travelPayouts</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

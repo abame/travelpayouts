@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset
+        name="PHPCS Coding Standards for abame/travelpayouts"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd"
+>
+    <description>Check the code of the sniffs.</description>
+    <arg name="colors"/>
+    <rule ref="ruleset.xml"/>
+    <file>src</file>
+    <file>tests</file>
+    <exclude-pattern type="relative">*.(js|css)</exclude-pattern>
+</ruleset>
