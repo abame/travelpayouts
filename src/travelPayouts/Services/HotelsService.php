@@ -216,10 +216,8 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
             ));
         }
 
+        /** @var array{popularity: array<int, array<string, int|string>>} $response */
         $response =  $this->client->execute($url, $options);
-        if (!is_array($response)) {
-            throw new Exception('Response is not valid');
-        }
         return $response;
     }
 

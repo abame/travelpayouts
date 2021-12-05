@@ -85,10 +85,10 @@ class HotelsClient extends BaseClient
     /**
      * @param StreamInterface $jsonString
      *
-     * @return array<int, string>
+     * @return mixed
      * @throws RuntimeException
      */
-    private function makeApiResponse(StreamInterface $jsonString): array
+    private function makeApiResponse(StreamInterface $jsonString)
     {
         $data = json_decode($jsonString->getContents(), true);
         if (!$data) {
