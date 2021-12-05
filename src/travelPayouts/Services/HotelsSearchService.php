@@ -217,7 +217,7 @@ class HotelsSearchService extends AbstractService implements ServiceInterface, H
 
         $options['signature'] = $this->getSignature($options);
 
-        return $this->getClient()->setApiVersion('v1')->execute($url, $options);
+        return $this->client->setApiVersion('v1')->execute($url, $options);
     }
 
     public function getHost(): string
