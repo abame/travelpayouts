@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TravelPayouts\Services;
 
 use Exception;
+use GuzzleHttp\Exception\GuzzleException;
 use http\Exception\InvalidArgumentException;
 use TravelPayouts\Components\AbstractService;
 use TravelPayouts\Components\Client;
@@ -153,35 +154,18 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
             $isLocationType = $type == 'location';
             /** @var array<string, mixed> $locationArray */
             $locationArray = $value['location'] ?? [];
-            $valueHasLocation = isset($value['location']) && isset($locationArray['country']);
 
             /** @var string|null $countryName */
-            $countryName = $isLocationType ? $value['country'] : ($valueHasLocation ? $locationArray['country'] : null);
-            if ($countryName === null) {
+            $countryName = $locationArray['country'] ?? null;
+            $countryName = $countryName === null && $isLocationType ? $value['country'] : null;
+            if (!is_string($countryName)) {
                 continue;
             }
-            $country = $dataService->getCountryByName($countryName);
-            $name = $isLocationType ? (is_string($value['name']) ? $value['name'] : '') : (is_string($locationArray['name']) ? $locationArray['name'] : '');
-            $state = $isLocationType ? (is_string($value['state']) ? $value['state'] : '') : (is_string($locationArray['state']) ? $locationArray['state'] : '');
+            $locationModel = $this->getLocationModel($dataService, $countryName, $value, $locationArray);
 
-            /** @var array<string, float> $geo */
-            $geo = $isLocationType ? (is_array($value['geo']) ? $value['geo'] : []) : (is_array($locationArray['geo']) ? $locationArray['geo'] : []);
-
-            $locationModel = (new HotelLocationSmall())
-                ->setGeo($geo)
-                ->setName($name)
-                ->setState($state)
-                ->setCountryIso(is_array($country) && isset($country['code']) && is_string($country['code']) ? $country['code'] : '');
-            if ($isLocationType) {
-                $singleResponse = $response;
-                $singleResponse['location'] = $locationModel;
-                $responseData[] = $singleResponse;
-            }
-
-            if (!$isLocationType) {
-                $response[$type]['location'] = $locationModel;
-                $responseData[] = $response[$type];
-            }
+            $singleResponse = $isLocationType ? $response : $value;
+            $singleResponse['location'] = $locationModel;
+            $responseData[] = $singleResponse;
         }
 
         return $responseData;
@@ -328,5 +312,37 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
             ->setType(is_string($item['type']) ? $item['type'] : '')
             ->setGeo($geo)
             ->setFullName(is_string($item['fullName']) ? $item['fullName'] : '');
+    }
+
+    /**
+     * @param DataService $dataService
+     * @param string $countryName
+     * @param array<string, array<int|string, float|string|null>|int|string|HotelLocationSmall> $value
+     * @param array<string, mixed> $locationArray
+     * @return HotelLocationSmall
+     * @throws GuzzleException
+     */
+    private function getLocationModel(DataService $dataService, string $countryName, array $value, array $locationArray): HotelLocationSmall
+    {
+        $country = $dataService->getCountryByName($countryName);
+
+        $name = isset($value['name']) && is_string($value['name']) ? $value['name'] : '';
+        $name = $name === '' && is_string($locationArray['name']) ? $locationArray['name'] : '';
+
+        $state = isset($value['state']) && is_string($value['state']) ? $value['state'] : '';
+        $state = $state === '' && isset($locationArray['state']) && is_string($locationArray['state']) ? $locationArray['state'] : '';
+
+        $geo = isset($value['geo']) && is_array($value['geo']) ? $value['geo'] : [];
+
+        /** @var array<string, float> $geo */
+        $geo = count($geo) === 0 && is_array($locationArray['geo']) ? $locationArray['geo'] : [];
+
+        $countryIso = is_array($country) && is_string($country['code']) ? $country['code'] : '';
+
+        return (new HotelLocationSmall())
+            ->setGeo($geo)
+            ->setName($name)
+            ->setState($state)
+            ->setCountryIso($countryIso);
     }
 }
