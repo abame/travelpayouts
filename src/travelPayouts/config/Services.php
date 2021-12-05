@@ -14,7 +14,7 @@ use TravelPayouts\Services\TicketsService;
 
 class Services
 {
-    /** @return array<string, string> */
+    /** @return array<string, class-string> */
     public function services(): array
     {
         return [

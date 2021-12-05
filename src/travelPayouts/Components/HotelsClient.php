@@ -61,7 +61,7 @@ class HotelsClient extends BaseClient
 
         if ($replaceOptions) {
             $paramName = $type === 'GET' ? 'query' : 'body';
-            $params[$paramName] = isset($params[$paramName]) ? (array_merge($params[$paramName], $options)) : $options;
+            $params[$paramName] = isset($params[$paramName]) && is_array($params[$paramName]) ? (array_merge($params[$paramName], $options)) : $options;
         } else {
             $params += $options;
         }

@@ -174,7 +174,7 @@ class Ticket
     {
         $url = '';
 
-        $getTripClass = function ($class): string {
+        $getTripClass = function (int $class): string {
             $ticketClass = 'Y';
 
             switch ($class) {

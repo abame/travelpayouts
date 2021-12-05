@@ -6,7 +6,6 @@ namespace TravelPayouts\Services;
 
 use Exception;
 use http\Exception\InvalidArgumentException;
-use HttpInvalidParamException;
 use TravelPayouts\Components\AbstractService;
 use TravelPayouts\Components\Client;
 use TravelPayouts\Components\HotelsClient;
@@ -172,31 +171,42 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
 
         $dataService = $this->getDataService()->setClient(new Client($this->client->getToken()));
 
+        /** @var array<int, array<int|string, HotelLocationSmall|array<array-key, HotelLocationSmall|array<int|string, float|null|string>|float|int|null|string>|int|string>> $responseData */
+        $responseData = [];
         foreach ($response as $type => $value) {
             $isLocationType = $type == 'location';
-            $valueHasLocation = isset($value['location']);
-            $countryName = $isLocationType ? $value['country'] : ($valueHasLocation ? $value['location']['country'] : null);
+            /** @var array<string, mixed> $locationArray */
+            $locationArray = $value['location'] ?? [];
+            $valueHasLocation = isset($value['location']) && isset($locationArray['country']);
+
+            /** @var string|null $countryName */
+            $countryName = $isLocationType ? $value['country'] : ($valueHasLocation ? $locationArray['country'] : null);
             if ($countryName === null) {
                 continue;
             }
             $country = $dataService->getCountryByName($countryName);
-            $locationModel = new HotelLocationSmall();
-            $locationModel
-                ->setGeo($isLocationType  ? $value['geo'] : $value['location']['geo'])
-                ->setName($isLocationType ? $value['name'] : $value['location']['name'])
-                ->setState($isLocationType ? $value['state'] : $value['location']['state'])
+            $name = $isLocationType ? (is_string($value['name']) ? $value['name'] : '') : (is_string($locationArray['name']) ? $locationArray['name'] : '');
+            $state = $isLocationType ? (is_string($value['state']) ? $value['state'] : '') : (is_string($locationArray['state']) ? $locationArray['state'] : '');
+
+            /** @var array<string, float> $geo */
+            $geo = $isLocationType ? (is_array($value['geo']) ? $value['geo'] : []) : (is_array($locationArray['geo']) ? $locationArray['geo'] : []);
+
+            $locationModel = (new HotelLocationSmall())
+                ->setGeo($geo)
+                ->setName($name)
+                ->setState($state)
                 ->setCountryIso(is_array($country) && isset($country['code']) && is_string($country['code']) ? $country['code'] : '');
             if ($isLocationType) {
                 $singleResponse = $response;
                 $singleResponse['location'] = $locationModel;
-                unset($response);
-                $response[] = $singleResponse;
+                $responseData[] = $singleResponse;
             } else {
                 $response[$type]['location'] = $locationModel;
+                $responseData[] = $response[$type];
             }
         }
 
-        return $response;
+        return $responseData;
     }
 
     public function getHotelsSelection(
@@ -221,10 +231,10 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
         ];
 
         if (!in_array($language, $this->availableLanguages)) {
-            throw new HttpInvalidParamException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 '%s is not a valid language. Possible options: %s',
                 $language,
-                var_export($this->availableLanguages, false)
+                var_export($this->availableLanguages, true)
             ));
         }
 
@@ -275,7 +285,7 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
             throw new InvalidArgumentException(sprintf(
                 '%s is not a valid language. Possible options: %s',
                 $language,
-                var_export($this->availableLanguages, false)
+                var_export($this->availableLanguages, true)
             ));
         }
 
@@ -294,7 +304,7 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
             throw new InvalidArgumentException(sprintf(
                 '%s is not a valid language. Possible options: %s',
                 $language,
-                var_export($this->availableLanguages, false)
+                var_export($this->availableLanguages, true)
             ));
         }
 

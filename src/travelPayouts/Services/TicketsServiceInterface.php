@@ -79,7 +79,7 @@ interface TicketsServiceInterface
      * @param bool|true $show_to_affiliates false - all prices, true - prices found with affiliate marker
      *                                       (recommended). Default value is true.
      *
-     * @return array{prices: array<int, Ticket>, origins: array<int, Airport|null>, destinations: array<int, Airport|null>}
+     * @return array{prices: Ticket[], origins: array<array-key, Airport|null>, destinations: array<array-key, Airport|null>}
      * @throws RuntimeException|Exception|GuzzleException
      */
     public function getNearestPlacesMatrix(string $depart_date, string $return_date, string $origin = '', string $destination = '', string $currency = 'eur', bool $show_to_affiliates = true): array;

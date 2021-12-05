@@ -26,10 +26,10 @@ use TravelPayouts\Services\TicketsService;
  */
 trait ServiceInjector
 {
-    /** @var array<string, string> */
+    /** @var array<string, class-string> */
     private array $serviceMap = [];
 
-    /** @return array<string, string> */
+    /** @return array<string, class-string> */
     private function getServiceMap(): array
     {
         if (count($this->serviceMap) === 0) {
@@ -44,7 +44,10 @@ trait ServiceInjector
         return $this->serviceMap;
     }
 
-    /** @throws Exception */
+    /**
+     * @param class-string $serviceName
+     * @throws Exception|RuntimeException
+     */
     private function getService(string $serviceName): ServiceInterface
     {
         if (!method_exists($this, 'getHotelClient') && !method_exists($this, 'getClient')) {
@@ -54,13 +57,19 @@ trait ServiceInjector
         /** @var ServiceInterface $service */
         $service = new $serviceName();
 
+        /** @var BaseClient|null $client */
+        $client = null;
         if ($service instanceof HotelsServiceInterface && method_exists($this, 'getHotelClient')) {
-            $service->setClient($this->getHotelClient());
+            $client = $this->getHotelClient();
         }
 
         if (!($service instanceof HotelsServiceInterface) && method_exists($this, 'getClient')) {
-            $service->setClient($this->getClient());
+            $client = $this->getClient();
         }
+        if ($client === null || $client instanceof ServiceInterface) {
+            throw new RuntimeException('No HTTP Client specified');
+        }
+        $service->setClient($client);
 
         return $service;
     }

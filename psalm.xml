@@ -16,6 +16,7 @@
         <PropertyNotSetInConstructor>
             <errorLevel type="suppress">
                 <directory name="tests/"/>
+                <directory name="src/"/>
                 <referencedProperty name="$backupStaticAttributes"/>
                 <referencedProperty name="$runTestInSeparateProcess"/>
             </errorLevel>

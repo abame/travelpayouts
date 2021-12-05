@@ -79,7 +79,7 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
 
     public function getNearestPlacesMatrix(string $depart_date, string $return_date, string $origin = '', string $destination = '', string $currency = 'eur', bool $show_to_affiliates = true): array
     {
-        /** @var array{prices: array<int, Ticket>, origins: array<int, Airport|null>, destinations: array<int, Airport|null>} $arResult */
+        /** @var array{prices: Ticket[], origins: array<array-key, Airport|null>, destinations: array<array-key, Airport|null>} $arResult */
         $arResult = [];
 
         $url = 'prices/nearest-places-matrix';
@@ -192,7 +192,7 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
                     ->setReturnDate(new DateTime($ticket['return_at']))
                     ->setExpires(new DateTime($ticket['expires_at']))
                     ->setAirline($ticket['airline'])
-                    ->setFlightNumber((int)$ticket['flight_number']);
+                    ->setFlightNumber($ticket['flight_number']);
             }
         }
 
@@ -209,7 +209,7 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         /** @var array<int, array<string, string|int>> $item */
         $item = array_shift($response['data']);
 
-        if (!is_countable($item) || (count($item) === 0 && $response['success'])) {
+        if ((count($item) === 0 && $response['success'])) {
             return null;
         }
 
@@ -255,8 +255,8 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         $tickets = [];
         /** @var array{price: int, destination: string, origin: string, departure_at: string, flight_number: int, airline: string, return_at: string, transfers: int, expires_at: string} $ticket */
         foreach ($response['data'] as $ticket) {
-            $destination = $dataService->getPlace((string)$ticket['destination']);
-            $originObj = $dataService->getPlace((string)$ticket['origin']);
+            $destination = $dataService->getPlace($ticket['destination']);
+            $originObj = $dataService->getPlace($ticket['origin']);
             if ($originObj !== null && $destination !== null) {
                 $tickets[] = $this->createTicketObject($originObj, $destination, $ticket, 'eur');
             }

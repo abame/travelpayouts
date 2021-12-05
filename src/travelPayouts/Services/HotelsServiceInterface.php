@@ -6,7 +6,7 @@ namespace TravelPayouts\Services;
 
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
-use HttpInvalidParamException;
+use InvalidArgumentException;
 use TravelPayouts\Entity\Hotel;
 use TravelPayouts\Entity\HotelLocation;
 use TravelPayouts\Entity\HotelLocationSmall;
@@ -63,7 +63,7 @@ interface HotelsServiceInterface
      * @param int $limit
      * @param string|null $customerIp
      *
-     * @return array<int, array<string, int|string|HotelLocationSmall|int[]>>
+     * @return array<int, array<int|string, HotelLocationSmall|array<array-key, HotelLocationSmall|array<int|string, float|null|string>|float|int|null|string>|int|string>>
      * @throws GuzzleException|Exception
      */
     public function getCostOfLiving(
@@ -97,7 +97,7 @@ interface HotelsServiceInterface
      * @param int $limit limitation of output results from 1 to 100, default - 10
      *
      * @return array{popularity: array<int, array<string, int|string>>}
-     * @throws GuzzleException|HttpInvalidParamException|Exception
+     * @throws GuzzleException|InvalidArgumentException|Exception
      */
     public function getHotelsSelection(
         string $checkIn,
