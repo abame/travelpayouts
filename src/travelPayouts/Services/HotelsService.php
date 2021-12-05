@@ -59,31 +59,7 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
             switch ($resultType) {
                 case 'locations':
                     foreach ($resultSet as $item) {
-                        if ($searchByCoordinates) {
-                            /** @var array<string, float> $geo */
-                            $geo = is_array($item['geo']) ? $item['geo'] : [];
-                            $model = (new HotelLocationSmall())
-                                ->setId((int)$item['id'])
-                                ->setName(is_string($item['name']) ? $item['name'] : '')
-                                ->setCountryIso(is_string($item['countryIso']) ? $item['countryIso'] : '')
-                                ->setState(is_string($item['state']) ? $item['state'] : null)
-                                ->setType(is_string($item['type']) ? $item['type'] : '')
-                                ->setGeo($geo)
-                                ->setFullName(is_string($item['fullName']) ? $item['fullName'] : '');
-                        } else {
-                            $model = (new HotelLocation())
-                                ->setId((int)$item['id'])
-                                ->setCityName(is_string($item['cityName']) ? $item['cityName'] : '')
-                                ->setIata(is_array($item['iata']) ? $item['iata'] : [])
-                                ->setLocation(is_array($item['location']) ? $item['location'] : [])
-                                ->setFullName(is_string($item['fullName']) ? $item['fullName'] : '')
-                                ->setCountryCode(is_string($item['countryCode']) ? $item['countryCode'] : '')
-                                ->setCountryName(is_string($item['countryName']) ? $item['countryName'] : '')
-                                ->setHotelsCount((int)$item['hotelsCount'])
-                                ->setScore(is_string($item['_score']) ? $item['_score'] : '');
-                        }
-
-                        $arResult['locations'][] = $model;
+                        $arResult['locations'][] = $searchByCoordinates ? $this->createHotelLocationSmall($item) : $this->createHotelLocation($item);
                     }
                     break;
                 case 'hotels':
@@ -200,7 +176,9 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
                 $singleResponse = $response;
                 $singleResponse['location'] = $locationModel;
                 $responseData[] = $singleResponse;
-            } else {
+            }
+
+            if (!$isLocationType) {
                 $response[$type]['location'] = $locationModel;
                 $responseData[] = $response[$type];
             }
@@ -322,5 +300,35 @@ class HotelsService extends AbstractService implements ServiceInterface, HotelsS
         $url_example .= $auto ? 'auto' : 'jpg';
 
         return sprintf($url_example, $hotelId, $photoId, $photoSize);
+    }
+
+    /** @param array<string, array<int, string>|int|string> $item */
+    private function createHotelLocation(array $item): HotelLocation
+    {
+        return (new HotelLocation())
+            ->setId((int)$item['id'])
+            ->setCityName(is_string($item['cityName']) ? $item['cityName'] : '')
+            ->setIata(is_array($item['iata']) ? $item['iata'] : [])
+            ->setLocation(is_array($item['location']) ? $item['location'] : [])
+            ->setFullName(is_string($item['fullName']) ? $item['fullName'] : '')
+            ->setCountryCode(is_string($item['countryCode']) ? $item['countryCode'] : '')
+            ->setCountryName(is_string($item['countryName']) ? $item['countryName'] : '')
+            ->setHotelsCount((int)$item['hotelsCount'])
+            ->setScore(is_string($item['_score']) ? $item['_score'] : '');
+    }
+
+    /** @param array<string, array<int, string>|int|string> $item */
+    private function createHotelLocationSmall(array $item): HotelLocationSmall
+    {
+        /** @var array<string, float> $geo */
+        $geo = is_array($item['geo']) ? $item['geo'] : [];
+        return (new HotelLocationSmall())
+            ->setId((int)$item['id'])
+            ->setName(is_string($item['name']) ? $item['name'] : '')
+            ->setCountryIso(is_string($item['countryIso']) ? $item['countryIso'] : '')
+            ->setState(is_string($item['state']) ? $item['state'] : null)
+            ->setType(is_string($item['type']) ? $item['type'] : '')
+            ->setGeo($geo)
+            ->setFullName(is_string($item['fullName']) ? $item['fullName'] : '');
     }
 }

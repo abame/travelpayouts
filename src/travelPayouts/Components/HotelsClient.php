@@ -47,11 +47,11 @@ class HotelsClient extends BaseClient
      */
     public function execute(string $url, array $options, string $type = 'GET', bool $replaceOptions = true)
     {
+        $finalUrl = '/api/' . $this->getApiVersion() . '/' . $url . '.json';
         if ($this->defaultHost === self::YASEN_HOST) {
-            $url = '/tp/' . $url . '.json';
-        } else {
-            $url = '/api/' . $this->getApiVersion() . '/' . $url . '.json';
+            $finalUrl = '/tp/' . $url . '.json';
         }
+
         $params = [
             'http_errors' => false,
             'query' => [
@@ -62,11 +62,12 @@ class HotelsClient extends BaseClient
         if ($replaceOptions) {
             $paramName = $type === 'GET' ? 'query' : 'body';
             $params[$paramName] = isset($params[$paramName]) && is_array($params[$paramName]) ? (array_merge($params[$paramName], $options)) : $options;
-        } else {
+        }
+        if (!$replaceOptions) {
             $params += $options;
         }
 
-        $body = $this->validateResponse($url, $params, $type);
+        $body = $this->validateResponse($finalUrl, $params, $type);
 
         return $this->makeApiResponse($body);
     }

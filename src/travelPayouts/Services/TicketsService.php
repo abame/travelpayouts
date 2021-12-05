@@ -18,8 +18,19 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
 {
     private Client $client;
 
-    public function getLatestPrices(string $origin = '', string $destination = '', bool $one_way = false, string $currency = 'eur', string $period_type = 'year', int $page = 1, int $limit = 30, bool $show_to_affiliates = true, string $sorting = 'price', int $trip_class = self::ECONOMY_CLASS, int $trip_duration = 0): array
-    {
+    public function getLatestPrices(
+        string $origin = '',
+        string $destination = '',
+        bool $one_way = false,
+        string $currency = 'eur',
+        string $period_type = 'year',
+        int $page = 1,
+        int $limit = 30,
+        bool $show_to_affiliates = true,
+        string $sorting = 'price',
+        int $trip_class = self::ECONOMY_CLASS,
+        int $trip_duration = 0
+    ): array {
         $url = 'prices/latest';
 
         $options = [
@@ -57,8 +68,13 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         return $this;
     }
 
-    public function getMonthMatrix(string $origin, string $destination, string $month, string $currency = 'eur', bool $show_to_affiliates = true): array
-    {
+    public function getMonthMatrix(
+        string $origin,
+        string $destination,
+        string $month,
+        string $currency = 'eur',
+        bool $show_to_affiliates = true
+    ): array {
         $url = 'prices/month-matrix';
 
         $date = new DateTime($month);
@@ -77,8 +93,14 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         return $this->mapTickets($response, $currency);
     }
 
-    public function getNearestPlacesMatrix(string $depart_date, string $return_date, string $origin = '', string $destination = '', string $currency = 'eur', bool $show_to_affiliates = true): array
-    {
+    public function getNearestPlacesMatrix(
+        string $depart_date,
+        string $return_date,
+        string $origin = '',
+        string $destination = '',
+        string $currency = 'eur',
+        bool $show_to_affiliates = true
+    ): array {
         /** @var array{prices: Ticket[], origins: array<array-key, Airport|null>, destinations: array<array-key, Airport|null>} $arResult */
         $arResult = [];
 
@@ -123,8 +145,14 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         return $arResult;
     }
 
-    public function getWeekMatrix(string $origin, string $destination, string $depart_date, string $return_date, string $currency = 'eur', bool $show_to_affiliates = true): array
-    {
+    public function getWeekMatrix(
+        string $origin,
+        string $destination,
+        string $depart_date,
+        string $return_date,
+        string $currency = 'eur',
+        bool $show_to_affiliates = true
+    ): array {
         $url = 'prices/week-matrix';
 
         $depart_date = new DateTime($depart_date);
@@ -145,8 +173,15 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         return $this->mapTickets($response, $currency);
     }
 
-    public function getCalendar(string $origin, string $destination, string $depart_date, string $return_date = '', string $currency = 'eur', string $calendar_type = 'departure_date', int $trip_duration = 0): array
-    {
+    public function getCalendar(
+        string $origin,
+        string $destination,
+        string $depart_date,
+        string $return_date = '',
+        string $currency = 'eur',
+        string $calendar_type = 'departure_date',
+        int $trip_duration = 0
+    ): array {
         $url = 'prices/calendar';
 
         $depart_date = new DateTime($depart_date);
@@ -333,13 +368,13 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
             ->setFlightNumber((int)($ticket['flight_number'] ?? 0))
             ->setExpires(isset($ticket['expires_at']) ? new DateTime((string)$ticket['expires_at']) : null)
             ->setCurrency($currency)
-            ->setActual(isset($ticket['actual']) ? (bool)$ticket['actual'] : false)
+            ->setActual(isset($ticket['actual']) && $ticket['actual'])
             ->setDepartDate(new DateTime(isset($ticket['departure_at']) ? (string)$ticket['departure_at'] : (string)$ticket['depart_date']))
             ->setReturnDate(new DateTime(isset($ticket['return_at']) ? (string)$ticket['return_at'] : (string)$ticket['return_date']))
             ->setFoundAt(new DateTime(isset($ticket['found_at']) ? (string)$ticket['found_at'] : 'now'))
             ->setNumberOfChanges(isset($ticket['transfers']) ? (int)$ticket['transfers'] : (isset($ticket['number_of_changes']) ? (int)$ticket['number_of_changes'] : 0))
             ->setDistance(isset($ticket['distance']) ? (int)$ticket['distance'] : 0)
-            ->setShowToAffiliates(isset($ticket['show_to_affiliates']) ? (bool)$ticket['show_to_affiliates'] : true)
+            ->setShowToAffiliates(!isset($ticket['show_to_affiliates']) || $ticket['show_to_affiliates'])
             ->setTripClass(isset($ticket['trip_class']) ? (int)$ticket['trip_class'] : self::ECONOMY_CLASS);
     }
 

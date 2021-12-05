@@ -48,7 +48,8 @@ class Client extends BaseClient
         if ($replaceOptions) {
             $paramName = $type === 'GET' ? 'query' : 'body';
             $params[$paramName] = $options;
-        } else {
+        }
+        if (!$replaceOptions) {
             $params += $options;
         }
 
