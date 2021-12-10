@@ -2,37 +2,97 @@
 # See: https://circleci.com/docs/2.0/language-php/
 version: 2
 
+workdir-74: &workdir-74
+  working_directory: ~/repo/7.4
+
+workdir-80: &workdir-80
+  working_directory: ~/repo/8.0
+
+workdir-81: &workdir-81
+  working_directory: ~/repo/8.1
+
+shared-build: &shared-build
+  working_directory: ~/repo
+  machine:
+    image: ubuntu-1604:202004-01
+    docker_layer_caching: true
+  steps:
+    - checkout
+
+shared-code: &shared-code
+  docker:
+    - image: php:$PHP_VERSION-alpine3.15
+
+  # Add steps to the job
+  # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+  steps:
+    - checkout
+
+    - run: apk add autoconf gcc libc-dev make zlib-dev curl-dev
+    - run: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+    # Download and cache dependencies
+    - restore_cache:
+        keys:
+          # "composer.lock" can be used if it is committed to the repo
+          - v1-dependencies-{{ checksum "composer.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+    - run: composer install -n --prefer-dist
+
+    - save_cache:
+        key: v1-dependencies-{{ checksum "composer.json" }}
+        paths:
+          - ./vendor
+
+    # run tests with phpunit or codeception
+    - run: ./bin/code-analysis.sh
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: php:7.4-alpine3.15
+  "php-7.4-build":
+    <<: *shared-build
+    <<: *workdir-74
+  "php-8.0-build":
+    <<: *shared-build
+    <<: *workdir-80
+  "php-8.1-build":
+    <<: *shared-build
+    <<: *workdir-81
+  "php-7.4-code":
+    <<: *shared-code
+    <<: *workdir-74
+  "php-8.0-code":
+    <<: *shared-code
+    <<: *workdir-80
+  "php-8.1-code":
+    <<: *shared-code
+    <<: *workdir-81
 
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-
-      - run: apk add autoconf gcc libc-dev make zlib-dev curl-dev
-      - run: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            # "composer.lock" can be used if it is committed to the repo
-            - v1-dependencies-{{ checksum "composer.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: composer install -n --prefer-dist
-
-      - save_cache:
-          key: v1-dependencies-{{ checksum "composer.json" }}
-          paths:
-            - ./vendor
-
-      # run tests with phpunit or codeception
-      - run: ./bin/code-analysis.sh
+workflows:
+  version: 2
+  build-test-analyze:
+    jobs:
+      # PHP 7.4 jobs
+      - "php-7.4-build":
+          context: php74
+      - "php-7.4-code":
+          context: php74
+          requires:
+            - "php-7.4-build"
+      # PHP 8.0 jobs
+      - "php-8.0-build":
+          context: php80
+      - "php-8.0-code":
+          context: php80
+          requires:
+            - "php-8.0-build"
+      # PHP 8.1 jobs
+      - "php-8.1-build":
+          context: php81
+      - "php-8.1-code":
+          context: php81
+          requires:
+            - "php-8.1-build"
