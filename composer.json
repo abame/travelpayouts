@@ -12,8 +12,6 @@
     "require": {
         "php": ">=7.4",
         "ext-json": "*",
-        "ext-raphf": "*",
-        "ext-propro": "*",
         "ext-mbstring": "*",
         "guzzlehttp/guzzle":"7.4.*",
         "it-for-free/array_column": "v1.1.*"

@@ -237,8 +237,8 @@ class TicketsTest extends TestCase
 
     public function testGetDirectNotExist(): void
     {
-        $origin = 'LED';
-        $destination = 'JFK';
+        $origin = 'MOW';
+        $destination = 'LED';
 
         $month = new DateTime('+1 month');
 

@@ -18,8 +18,6 @@ jobs:
 
       - run: apk add autoconf gcc libc-dev make zlib-dev curl-dev
       - run: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-      - run: pecl install raphf propro
-      - run: docker-php-ext-enable raphf propro
 
       # Download and cache dependencies
       - restore_cache:
