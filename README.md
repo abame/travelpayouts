@@ -1,5 +1,7 @@
 # Travel Payouts PHP SDK
 
+##CircleCI Status [![CircleCI](https://circleci.com/gh/abame/travelpayouts/tree/master.svg?style=svg)](https://circleci.com/gh/abame/travelpayouts/tree/master)
+
 ## Installation
 
 ### Composer

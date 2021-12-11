@@ -48,6 +48,7 @@ shared-code: &shared-code
 
     # run tests with phpunit or codeception
     - run: ./bin/code-analysis.sh
+    - run: ./bin/run-tests.sh
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
