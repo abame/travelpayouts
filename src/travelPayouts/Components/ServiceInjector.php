@@ -10,9 +10,10 @@ use RuntimeException;
 use TravelPayouts\config\Services;
 use TravelPayouts\Services\DataService;
 use TravelPayouts\Services\FlightService;
-use TravelPayouts\Services\HotelsSearchService;
-use TravelPayouts\Services\HotelsService;
-use TravelPayouts\Services\HotelsServiceInterface;
+use TravelPayouts\Services\HotelSearchService;
+use TravelPayouts\Services\HotelSearchServiceInterface;
+use TravelPayouts\Services\HotelService;
+use TravelPayouts\Services\HotelServiceInterface;
 use TravelPayouts\Services\PartnerService;
 use TravelPayouts\Services\TicketsService;
 
@@ -21,8 +22,8 @@ use TravelPayouts\Services\TicketsService;
  * @method FlightService       getFlightService()
  * @method PartnerService      getPartnerService()
  * @method TicketsService      getTicketsService()
- * @method HotelsService       getHotelsService()
- * @method HotelsSearchService getHotelsSearchService()
+ * @method HotelService       getHotelService()
+ * @method HotelSearchService getHotelSearchService()
  */
 trait ServiceInjector
 {
@@ -59,11 +60,11 @@ trait ServiceInjector
 
         /** @var BaseClient|null $client */
         $client = null;
-        if ($service instanceof HotelsServiceInterface && method_exists($this, 'getHotelClient')) {
+        if (($service instanceof HotelServiceInterface || $service instanceof HotelSearchServiceInterface) && method_exists($this, 'getHotelClient')) {
             $client = $this->getHotelClient();
         }
 
-        if (!($service instanceof HotelsServiceInterface) && method_exists($this, 'getClient')) {
+        if (!($service instanceof HotelServiceInterface || $service instanceof HotelSearchServiceInterface) && method_exists($this, 'getClient')) {
             $client = $this->getClient();
         }
         if ($client === null || $client instanceof ServiceInterface) {

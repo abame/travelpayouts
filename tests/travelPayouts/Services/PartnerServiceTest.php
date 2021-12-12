@@ -7,14 +7,11 @@ namespace Tests\TravelPayouts\Services;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
-use Tests\TravelPayouts\TokenTrait;
 use TravelPayouts\Services\PartnerService;
 use TravelPayouts\Travel;
 
 class PartnerServiceTest extends TestCase
 {
-    use TokenTrait;
-
     protected PartnerService $service;
 
     public function testGetBalance(): void
@@ -91,7 +88,7 @@ class PartnerServiceTest extends TestCase
 
     protected function setUp(): void
     {
-        $travel        = new Travel(self::getToken());
+        $travel = new Travel('DUMMY_TOKEN');
         $this->service = $travel->getPartnerService();
 
         date_default_timezone_set('UTC');

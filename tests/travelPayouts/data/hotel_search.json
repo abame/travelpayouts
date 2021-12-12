@@ -1,0 +1,41 @@
+{
+  "results": {
+    "locations": [
+      {
+        "iata": [
+          "MOW",
+          "ZIA",
+          "VKO",
+          "DME",
+          "SVO"
+        ],
+        "fullName": "Москва, Россия",
+        "countryCode": "RU",
+        "cityName": "Москва",
+        "id": "12153",
+        "_score": 4226,
+        "hotelsCount": "4226",
+        "countryName": "Россия",
+        "location": {
+          "lat": "55.752041",
+          "lon": "37.617508"
+        }
+      }
+    ],
+    "hotels": [
+      {
+        "locationId": 12153,
+        "id": "333526",
+        "location": {
+          "lat": 55.78507,
+          "lon": 37.62397
+        },
+        "fullName": "AZIMUT Отель Олимпик Москва, Москва, Россия",
+        "label": "AZIMUT Отель Олимпик Москва",
+        "_score": 842358,
+        "locationName": "Москва, Россия"
+      }
+    ]
+  },
+  "status": "ok"
+}

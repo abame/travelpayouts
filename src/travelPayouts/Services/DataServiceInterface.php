@@ -2,6 +2,7 @@
 
 namespace TravelPayouts\Services;
 
+use Exception;
 use GuzzleHttp\Exception\GuzzleException;
 use RuntimeException;
 use TravelPayouts\Entity\Airport;
@@ -38,7 +39,7 @@ interface DataServiceInterface
      * @param bool $simpleArray
      *
      * @return City[]|array<int, array<string, string|array<string, string|float>>>
-     * @throws GuzzleException
+     * @throws GuzzleException|Exception
      */
     public function getCities(bool $simpleArray = false): array;
 
@@ -47,7 +48,7 @@ interface DataServiceInterface
 
     /**
      * @return Country[]|array<int, array<string, string|array<string, string>>>
-     * @throws GuzzleException
+     * @throws GuzzleException|Exception
      */
     public function getCountries(bool $simpleArray = false): array;
 
@@ -64,13 +65,13 @@ interface DataServiceInterface
      * @param bool $simpleArray
      *
      * @return Airport[]|array<int, array<string, string|array<string, float|string>>>
-     * @throws GuzzleException
+     * @throws GuzzleException|Exception
      */
     public function getAirports(bool $simpleArray): array;
 
     /**
      * @return array<string, mixed>
-     * @throws GuzzleException
+     * @throws GuzzleException|Exception
      */
     public function getAirlines(): array;
 
@@ -78,7 +79,7 @@ interface DataServiceInterface
      * Get airlines alliances
      *
      * @return array<string, mixed>
-     * @throws GuzzleException
+     * @throws GuzzleException|Exception
      */
     public function getAirlinesAlliances(): array;
 
@@ -86,13 +87,13 @@ interface DataServiceInterface
      * Get planes codes
      *
      * @return array<string, mixed>
-     * @throws GuzzleException
+     * @throws GuzzleException|Exception
      */
     public function getPlanes(): array;
 
     /**
      * @return array<string, mixed>
-     * @throws GuzzleException
+     * @throws GuzzleException|Exception
      */
     public function getRoutes(): array;
 
@@ -124,5 +125,5 @@ interface DataServiceInterface
      * @return array<string, float>
      * @throws GuzzleException
      */
-    public static function getCurrencies(): array;
+    public function getCurrencies(): array;
 }

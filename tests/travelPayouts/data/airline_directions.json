@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "data": {
+    "SVO-LED": 36890049,
+    "LED-SVO": 34770282,
+    "SVO-AER": 6030070,
+    "AER-SVO": 5000870,
+    "SVO-KRR": 3421462,
+    "SVO-SVX": 3248244,
+    "KRR-SVO": 2991310,
+    "SVX-SVO": 2576721,
+    "SVO-KZN": 2165451,
+    "KZN-SVO": 1954709
+  },
+  "error": null,
+  "currency": "rub"
+}

@@ -19,7 +19,7 @@ class HotelLocation
 
     private string $countryName;
 
-    private int $hotelsCount;
+    private int $hotelCount;
 
     /** @var string[] */
     private array $location = [];
@@ -100,14 +100,14 @@ class HotelLocation
         return $this;
     }
 
-    public function getHotelsCount(): int
+    public function getHotelCount(): int
     {
-        return $this->hotelsCount;
+        return $this->hotelCount;
     }
 
-    public function setHotelsCount(int $hotelsCount): HotelLocation
+    public function setHotelCount(int $hotelsCount): HotelLocation
     {
-        $this->hotelsCount = $hotelsCount;
+        $this->hotelCount = $hotelsCount;
 
         return $this;
     }

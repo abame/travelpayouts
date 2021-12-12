@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TravelPayouts\Components;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\StreamInterface;
@@ -26,6 +27,8 @@ abstract class BaseClient
      * @throws GuzzleException
      */
     abstract public function execute(string $url, array $options, string $type = 'GET', bool $replaceOptions = true);
+
+    abstract public function getToken(): string;
 
     /**
      * @param array<string, mixed> $params
@@ -76,5 +79,10 @@ abstract class BaseClient
         $this->apiVersion = $apiVersion;
 
         return $this;
+    }
+
+    public function getClient(): HttpClient
+    {
+        return $this->client;
     }
 }

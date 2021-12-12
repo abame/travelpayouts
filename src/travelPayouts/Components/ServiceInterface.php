@@ -12,8 +12,8 @@ interface ServiceInterface
     public const FLIGHT_SERVICE = 'FlightService';
     public const PARTNER_SERVICE = 'PartnerService';
     public const TICKETS_SERVICE = 'TicketsService';
-    public const HOTELS_SERVICE = 'HotelsService';
-    public const HOTELS_SEARCH_SERVICE = 'HotelsSearchService';
+    public const HOTEL_SERVICE = 'HotelService';
+    public const HOTEL_SEARCH_SERVICE = 'HotelSearchService';
 
     /**
      * @return BaseClient

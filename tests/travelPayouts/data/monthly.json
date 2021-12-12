@@ -1,0 +1,138 @@
+{
+  "success": true,
+  "data": {
+    "2021-12": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 36022,
+      "airline": "QR",
+      "flight_number": 338,
+      "departure_at": "2021-12-16T18:10:00+03:00",
+      "return_at": "2021-12-23T20:45:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-01": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 32050,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-01-30T15:20:00+03:00",
+      "return_at": "2022-02-19T11:35:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-02": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 31805,
+      "airline": "EK",
+      "flight_number": 132,
+      "departure_at": "2022-02-26T23:50:00+03:00",
+      "return_at": "2022-03-06T23:30:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-03": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 32031,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-03-27T15:20:00+03:00",
+      "return_at": "2022-04-18T11:40:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-04": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 32030,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-04-02T15:05:00+03:00",
+      "return_at": "2022-04-22T10:15:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-05": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 32036,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-05-02T15:05:00+03:00",
+      "return_at": "2022-05-22T11:40:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-06": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 32105,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-06-17T15:05:00+03:00",
+      "return_at": "2022-06-24T17:50:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-07": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 32081,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-07-16T15:05:00+03:00",
+      "return_at": "2022-08-12T20:10:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-08": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 32532,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-08-05T15:05:00+03:00",
+      "return_at": "2022-08-19T10:15:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-09": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 30616,
+      "airline": "S7",
+      "flight_number": 2513,
+      "departure_at": "2022-09-21T23:25:00+03:00",
+      "return_at": "2022-09-29T23:55:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-10": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 32718,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-10-21T15:05:00+03:00",
+      "return_at": "2022-11-06T20:05:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    },
+    "2022-11": {
+      "origin": "MOW",
+      "destination": "HKT",
+      "price": 36702,
+      "airline": "SQ",
+      "flight_number": 361,
+      "departure_at": "2022-11-01T15:20:00+03:00",
+      "return_at": "2022-11-10T18:00:00+07:00",
+      "transfers": 1,
+      "expires_at": "2021-12-12T14:49:28Z"
+    }
+  },
+  "currency": "RUB"
+}

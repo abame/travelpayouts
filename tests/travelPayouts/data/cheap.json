@@ -1,0 +1,48 @@
+{
+  "success": true,
+  "data": {
+    "HKT": {
+      "0": {
+        "price": 1795,
+        "airline": "SU",
+        "flight_number": 274,
+        "departure_at": "2021-12-12T19:15:00+03:00",
+        "return_at": "2022-01-03T23:05:00+07:00",
+        "expires_at": "2021-12-12T14:33:22Z"
+      },
+      "1": {
+        "price": 535,
+        "airline": "SU",
+        "flight_number": 272,
+        "departure_at": "2021-12-11T21:10:00+03:00",
+        "return_at": "2022-01-05T10:15:00+07:00",
+        "expires_at": "2021-12-12T14:33:22Z"
+      },
+      "2": {
+        "price": 487,
+        "airline": "EY",
+        "flight_number": 64,
+        "departure_at": "2021-12-14T15:50:00+03:00",
+        "return_at": "2022-01-01T23:30:00+07:00",
+        "expires_at": "2021-12-12T14:33:22Z"
+      },
+      "3": {
+        "price": 592,
+        "airline": "U6",
+        "flight_number": 867,
+        "departure_at": "2021-12-18T08:15:00+03:00",
+        "return_at": "2022-01-01T21:40:00+07:00",
+        "expires_at": "2021-12-12T14:33:22Z"
+      },
+      "4": {
+        "price": 674,
+        "airline": "N4",
+        "flight_number": 177,
+        "departure_at": "2021-12-30T08:25:00+03:00",
+        "return_at": "2022-01-07T22:35:00+07:00",
+        "expires_at": "2021-12-12T14:33:22Z"
+      }
+    }
+  },
+  "currency": "eur"
+}

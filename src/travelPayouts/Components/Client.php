@@ -58,11 +58,6 @@ class Client extends BaseClient
         return $this->makeApiResponse($body->getContents());
     }
 
-    public function getClient(): HttpClient
-    {
-        return $this->client;
-    }
-
     public function getToken(): string
     {
         return $this->token;

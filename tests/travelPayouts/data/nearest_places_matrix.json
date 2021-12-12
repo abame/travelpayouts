@@ -1,0 +1,80 @@
+{
+  "prices": [
+    {
+      "origin": "LED",
+      "destination": "HKT",
+      "price": 261,
+      "main_airline": "S7",
+      "depart_date": "2022-01-16T13:05:00+03:00",
+      "transfers": 2,
+      "duration": 1705,
+      "link": "/search/LED1601HKT2?t=S716423275001642429800001705LEDIKTBKKHKT_6b99e59f89cc0c3825ad4499fba71d6c_38360&search_date=12122021&expected_price_uuid=61abdbee-e27b-45ba-8b9f-f46670e60aae&expected_price_currency=rub",
+      "distance": 8009,
+      "found_at": "2021-12-12T13:05:30Z",
+      "gate": "KupiBilet.ru",
+      "trip_class": 0
+    },
+    {
+      "origin": "LED",
+      "destination": "HKT",
+      "price": 263,
+      "main_airline": "S7",
+      "depart_date": "2022-03-01T13:15:00+03:00",
+      "transfers": 2,
+      "duration": 1695,
+      "link": "/search/LED0103HKT1?t=S716461297001646231400001695LEDOVBBKKHKT_9384ddf00bdcb5d679a5349f4dc356e8_19344&search_date=11122021&expected_price_uuid=41eec258-524f-4cc4-8cdc-1dfdee21fc76&expected_price_currency=rub",
+      "distance": 8009,
+      "found_at": "2021-12-11T22:21:06Z",
+      "gate": "KupiBilet.ru",
+      "trip_class": 0
+    },
+    {
+      "origin": "LED",
+      "destination": "HKT",
+      "price": 266,
+      "main_airline": "SQ",
+      "depart_date": "2022-09-12T09:55:00+03:00",
+      "transfers": 2,
+      "duration": 1180,
+      "link": "/search/LED1209HKT1?t=SQ16629657001663036500001180LEDDMESINHKT_cf59e8aaf1c2820963459302efaf2eb0_19537&search_date=11122021&expected_price_uuid=674b4089-cb75-4b82-97e5-f1ee4897e269&expected_price_currency=rub",
+      "distance": 8009,
+      "found_at": "2021-12-11T04:06:21Z",
+      "gate": "City.Travel",
+      "trip_class": 0
+    },
+    {
+      "origin": "LED",
+      "destination": "HKT",
+      "price": 266,
+      "main_airline": "SQ",
+      "depart_date": "2022-10-24T09:55:00+03:00",
+      "transfers": 2,
+      "duration": 1180,
+      "link": "/search/LED2410HKT2?t=SQ16665945001666665300001180LEDDMESINHKT_98e86abe94b333561578512bd53b1d46_39028&search_date=10122021&expected_price_uuid=bfd1faf7-e057-429b-b8b4-18b88ceea86f&expected_price_currency=rub",
+      "distance": 8009,
+      "found_at": "2021-12-10T14:43:48Z",
+      "gate": "City.Travel",
+      "trip_class": 0
+    },
+    {
+      "origin": "LED",
+      "destination": "HKT",
+      "price": 266,
+      "main_airline": "SQ",
+      "depart_date": "2022-10-28T09:55:00+03:00",
+      "transfers": 2,
+      "duration": 1635,
+      "link": "/search/LED2810HKT1?t=SQ16669401001667038200001635LEDDMESINHKT_9cb8836b2919f23073c22f7032d7bd68_19537&search_date=11122021&expected_price_uuid=2a6a313b-4083-4301-b867-83b82c471e1c&expected_price_currency=rub",
+      "distance": 8009,
+      "found_at": "2021-12-11T05:25:59Z",
+      "gate": "City.Travel️",
+      "trip_class": 0
+    }
+  ],
+  "origins": [
+    "LED"
+  ],
+  "destinations": [
+    "HKT"
+  ]
+}

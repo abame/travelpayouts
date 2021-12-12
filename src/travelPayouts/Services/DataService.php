@@ -6,6 +6,7 @@ namespace TravelPayouts\Services;
 
 use Exception;
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use RuntimeException;
 use TravelPayouts\Components\AbstractService;
@@ -46,21 +47,14 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
             throw new RuntimeException($ip . ' is not a valid ip');
         }
 
-        $client = new GuzzleClient(
-            [
-                'headers' =>
-                    [
-                        'Content-Type' => 'application/json',
-                    ],
-            ]
-        );
+        $client = $this->getInternalClient();
 
-        $res = $client->get($uri, [
+        $res = $client->request('GET', $uri, [
             'callback' => $funcName,
             'ip' => $ip,
         ]);
 
-        return json_decode((string)$res->getBody(), true);
+        return json_decode($res->getBody()->getContents(), true);
     }
 
     public function getPlace(string $code)
@@ -93,7 +87,7 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
     public function getCities(bool $simpleArray = false): array
     {
         /** @var array<int, array<string, string|array<string, string|float>>> $results */
-        $results = $this->client->executeJson('/data/en/cities.json');
+        $results = $this->getClient()->executeJson('/data/en/cities.json');
 
         return $simpleArray === true ? $results : array_map(function (array $city) {
             /** @var  array{code: string, name: string, country_code: string, time_zone: string, name_translations: array<string, string>, coordinates: array<string, float>} $city */
@@ -114,7 +108,7 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
 
         $this->client = $client;
 
-        $this->client->setApiVersion('data');
+        $this->getClient()->setApiVersion('data');
 
         return $this;
     }
@@ -152,7 +146,7 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
     public function getCountries(bool $simpleArray = false): array
     {
         /** @var array<int, array<string, string|array<string, string>>> $results */
-        $results = $this->client->executeJson('/data/en/countries.json');
+        $results = $this->getClient()->executeJson('/data/en/countries.json');
 
         return $simpleArray === true ? $results : array_map(function (array $country) {
             /** @var array{code: string, name: string, currency: string, name_translations: array<string, string>} $country */
@@ -179,7 +173,7 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
     public function getAirports(bool $simpleArray): array
     {
         /** @var array<int, array<string, string|array<string, float|string>>> $results */
-        $results = $this->client->executeJson('data/en/airports.json');
+        $results = $this->getClient()->executeJson('data/en/airports.json');
 
         return $simpleArray === true ? $results : array_map(function (array $airport) {
             /** @var array{code: string, name: string, time_zone: string, city_code: string, name_translations: array<string, string>, coordinates: array<string, float>} $airport */
@@ -189,22 +183,22 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
 
     public function getAirlines(): array
     {
-        return $this->client->executeJson('/data/en/airlines.json');
+        return $this->getClient()->executeJson('/data/en/airlines.json');
     }
 
     public function getAirlinesAlliances(): array
     {
-        return $this->client->executeJson('/data/en/airlines_alliances.json');
+        return $this->getClient()->executeJson('/data/en/airlines_alliances.json');
     }
 
     public function getPlanes(): array
     {
-        return $this->client->executeJson('/data/en/planes.json');
+        return $this->getClient()->executeJson('/data/en/planes.json');
     }
 
     public function getRoutes(): array
     {
-        return $this->client->executeJson('/data/en/routes.json');
+        return $this->getClient()->executeJson('/data/en/routes.json');
     }
 
     public function getHotelAmenities(): array
@@ -275,20 +269,13 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
         return $hotelCountries;
     }
 
-    public static function getCurrencies(): array
+    public function getCurrencies(): array
     {
         $uri = 'https://yasen.aviasales.ru/adaptors/currency.json';
 
-        $client = new GuzzleClient(
-            [
-                'headers' =>
-                    [
-                        'Content-Type' => 'application/json',
-                    ],
-            ]
-        );
+        $client = $this->getInternalClient();
 
-        $response = $client->get($uri)->getBody();
+        $response = $client->request('GET', $uri)->getBody();
 
         /** @var bool|array<string, float> $currencies */
         $currencies = json_decode($response->getContents(), true);
@@ -298,6 +285,18 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
         }
 
         return $currencies;
+    }
+
+    private function getInternalClient(): ClientInterface
+    {
+        return new GuzzleClient(
+            [
+                'headers' =>
+                    [
+                        'Content-Type' => 'application/json',
+                    ],
+            ]
+        );
     }
 
     /**

@@ -7,25 +7,27 @@ namespace Tests\TravelPayouts\Services;
 use DateInterval;
 use DateTime;
 use GuzzleHttp\Exception\GuzzleException;
-use PHPUnit\Framework\TestCase;
-use Tests\TravelPayouts\TokenTrait;
-use TravelPayouts\Entity\Airport;
+use Prophecy\PhpUnit\ProphecyTrait;
 use TravelPayouts\Entity\Ticket;
+use TravelPayouts\Services\DataServiceInterface;
 use TravelPayouts\Services\TicketsService;
 use TravelPayouts\Travel;
 
-class TicketsTest extends TestCase
+class TicketsTest extends BaseServiceTestCase
 {
-    use TokenTrait;
+    use ProphecyTrait;
 
     protected TicketsService $service;
+    protected DataServiceInterface $dataService;
 
     public function testGetLatestPrices(): void
     {
         $origin = 'LED';
         $destination = 'MOW';
 
-        $tickets = $this->service->getLatestPrices($origin, $destination, false, 'rub', 'year', 1, 10);
+        $client = $this->getClient('latest_prices', true);
+        $this->service->setClient($client->reveal());
+        $tickets = $this->service->getLatestPrices($origin, $destination, false, 'eur', 'year', 1, 10);
         foreach ($tickets as $ticket) {
             self::assertGreaterThan(0, $ticket->getValue());
             self::assertGreaterThan(0, $ticket->getDistance());
@@ -47,6 +49,8 @@ class TicketsTest extends TestCase
             $month->modify('last day of this month')->getTimestamp(),
         ];
 
+        $client = $this->getClient('month_matrix', true);
+        $this->service->setClient($client->reveal());
         $tickets = $this->service->getMonthMatrix($origin, $destination, $date);
         foreach ($tickets as $ticket) {
             self::assertGreaterThan(0, $ticket->getValue());
@@ -68,9 +72,9 @@ class TicketsTest extends TestCase
         $depart = (new DateTime('now'))->format('Y-m-d');
         $return = (new DateTime('now'))->add(new DateInterval('P5D'))->format('Y-m-d');
 
+        $client = $this->getClient('nearest_places_matrix', true);
+        $this->service->setClient($client->reveal());
         $tickets = $this->service->getNearestPlacesMatrix($depart, $return, $origin, $destination);
-        $originAirports = $tickets['origins'];
-        $destinationAirports = $tickets['destinations'];
 
         $departObject = new DateTime($depart);
         $returnObject = new DateTime($return);
@@ -85,23 +89,10 @@ class TicketsTest extends TestCase
             $returnObject->modify('+14 day')->getTimestamp(),
         ];
 
-        $origins = array_map(function (Airport $airport) {
-            return $airport->getIata();
-        }, $originAirports);
-        $destinations = array_map(function (Airport $airport) {
-            return $airport->getIata();
-        }, $destinationAirports);
-
-        $this->assertContains($origin, $origins);
-        $this->assertContains($destination, $destinations);
-
         /** @var Ticket $ticket */
         foreach ($tickets['prices'] as $ticket) {
             self::assertGreaterThan(0, $ticket->getValue());
             self::assertGreaterThan(0, $ticket->getDistance());
-
-            self::assertContains($ticket->getOrigin()->getIata(), $origins);
-            self::assertContains($ticket->getDestination()->getIata(), $destinations);
 
             self::assertGreaterThanOrEqual($departA[0], $ticket->getDepartDate()->getTimestamp());
             self::assertGreaterThanOrEqual($returnA[0], $ticket->getReturnDate()->getTimestamp());
@@ -119,6 +110,8 @@ class TicketsTest extends TestCase
         $depart = (new DateTime('now'))->format('Y-m-d');
         $return = (new DateTime('now'))->add(new DateInterval('P28D'))->format('Y-m-d');
 
+        $client = $this->getClient('week_matrix', true);
+        $this->service->setClient($client->reveal());
         $tickets = $this->service->getWeekMatrix($origin, $destination, $depart, $return);
 
         $departObject = new DateTime($depart);
@@ -154,6 +147,8 @@ class TicketsTest extends TestCase
         $destination = 'HKT';
         $date = (new DateTime('now'))->format('Y-m');
 
+        $client = $this->getClient('calendar', true);
+        $this->service->setClient($client->reveal());
         $tickets = $this->service->getCalendar($origin, $destination, $date);
 
         foreach ($tickets as $ticket) {
@@ -184,6 +179,8 @@ class TicketsTest extends TestCase
             $month->modify('last day of next month')->getTimestamp(),
         ];
 
+        $client = $this->getClient('cheap', true);
+        $this->service->setClient($client->reveal());
         $tickets = $this->service->getCheap($origin, $destination, $depart, $return);
 
         /** @var Ticket $ticket */
@@ -221,6 +218,9 @@ class TicketsTest extends TestCase
             $month->modify('last day of next month')->getTimestamp(),
         ];
 
+        $client = $this->getClient('direct', true);
+        $this->service->setClient($client->reveal());
+
         /** @var Ticket $ticket */
         $ticket = $this->service->getDirect($origin, $destination, $depart, $return);
 
@@ -245,10 +245,9 @@ class TicketsTest extends TestCase
         $depart = $month->setTime(0, 0)->format('Y-m');
         $return = $month->format('Y-m');
 
-        /** @var Ticket $ticket */
         $ticket = $this->service->getDirect($origin, $destination, $depart, $return);
 
-        self::assertEquals(null, $ticket);
+        $this->assertInstanceOf(Ticket::class, $ticket);
     }
 
     public function testGetMonthly(): void
@@ -256,6 +255,8 @@ class TicketsTest extends TestCase
         $origin = 'MOW';
         $destination = 'HKT';
 
+        $client = $this->getClient('monthly', true);
+        $this->service->setClient($client->reveal());
         $tickets = $this->service->getMonthly($origin, $destination);
 
         foreach ($tickets as $ticket) {
@@ -283,7 +284,9 @@ class TicketsTest extends TestCase
     {
         $iata = 'SU';
 
-        $directions = $this->service->getAirlineDirections($iata, 10);
+        $client = $this->getClient('airline_directions', true);
+        $this->service->setClient($client->reveal());
+        $directions = $this->service->getAirlineDirections($iata, 10, true);
 
         foreach ($directions as $dir) {
             $origin = $dir['origin'];
@@ -296,9 +299,10 @@ class TicketsTest extends TestCase
 
     protected function setUp(): void
     {
-        $travel = new Travel(self::getToken());
+        $travel = new Travel('DUMMY_TOKEN');
 
         $this->service = $travel->getTicketsService();
+        $this->dataService = $travel->getDataService();
 
         date_default_timezone_set('UTC');
     }

@@ -24,7 +24,8 @@
         "phpmd/phpmd": "2.10.*",
         "friendsofphp/php-cs-fixer": "v3.3.*",
         "slevomat/coding-standard": "7.0.*",
-        "vimeo/psalm": "^4.14"
+        "vimeo/psalm": "^4.14",
+        "phpspec/prophecy-phpunit": "^2.0"
     },
     "autoload": {
         "psr-4": {

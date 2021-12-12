@@ -177,7 +177,7 @@ interface TicketsServiceInterface
      * @param int $limit Number of records. Default value: 30. Max value: 1000
      *
      * @return array<int, array{origin: City|Airport|null, destination: City|Airport|null, rating: int}>
-     * @throws RuntimeException|GuzzleException
+     * @throws RuntimeException|GuzzleException|Exception
      */
     public function getAirlineDirections(string $airline_code, int $limit = 30): array;
 }

@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "data": {
+    "LED": {
+      "0": {
+        "price": 2990,
+        "airline": "UT",
+        "flight_number": 369,
+        "departure_at": "2021-12-15T10:30:00+03:00",
+        "return_at": "2022-01-14T20:30:00+03:00",
+        "expires_at": "2021-12-12T14:35:50Z"
+      }
+    }
+  },
+  "currency": "rub"
+}

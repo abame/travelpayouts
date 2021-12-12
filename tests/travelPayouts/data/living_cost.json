@@ -1,0 +1,25 @@
+{
+  "stars": 4,
+  "pricePercentile": {
+    "3": 17100,
+    "10": 17100,
+    "35": 17100,
+    "50": 17100,
+    "75": 17100,
+    "99": 17100
+  },
+  "location": {
+    "state": null,
+    "geo": {
+      "lon": 30.316667,
+      "lat": 59.95
+    },
+    "name": "St. Petersburg",
+    "country": "Russia"
+  },
+  "priceAvg": 17100,
+  "locationId": 12196,
+  "hotelId": 277083,
+  "priceFrom": 17100,
+  "hotelName": "Saint-Petersburg Hotel"
+}
