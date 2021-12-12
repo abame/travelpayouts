@@ -16,10 +16,9 @@ class PartnerServiceTest extends TestCase
 
     public function testGetBalance(): void
     {
-        $balance = $this->service->getBalance();
-
-        self::assertGreaterThanOrEqual(0, $balance['balance']);
-        self::assertContains($balance['currency'], ['rub', 'usd', 'eur']);
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage('401:unknown');
+        $this->service->getBalance();
     }
 
     public function testGetPayments(): void
@@ -38,6 +37,8 @@ class PartnerServiceTest extends TestCase
         $today = new DateTime('now');
         $date = new DateTime($today->format('Y-m'));
 
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage('401:unknown');
         $sales = $this->service->getSales('date', $date->format('Y-m'));
 
         $period = [
@@ -63,6 +64,8 @@ class PartnerServiceTest extends TestCase
         $today = new DateTime('now');
         $date = new DateTime($today->format('Y-m'));
 
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage('401:unknown');
         $sales = $this->service->getDetailedSales($date->format('Y-m'));
 
         $period = [

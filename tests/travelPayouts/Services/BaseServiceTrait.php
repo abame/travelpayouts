@@ -4,7 +4,6 @@ namespace Tests\TravelPayouts\Services;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
-use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\ResponseInterface;
@@ -12,7 +11,7 @@ use Psr\Http\Message\StreamInterface;
 use TravelPayouts\Components\BaseClient;
 use TravelPayouts\Components\HotelClient;
 
-class BaseServiceTestCase extends TestCase
+trait BaseServiceTrait
 {
     /**
      * @return ObjectProphecy|ClientInterface|BaseClient

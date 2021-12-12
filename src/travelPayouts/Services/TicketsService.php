@@ -284,8 +284,9 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
             'origin' => $origin,
         ];
 
+        $this->getClient()->setApiVersion('v1');
         /** @var array{success: bool, currency: string, data: array<string, array<int, array<string, string|int>>>} $response */
-        $response = $this->getClient()->setApiVersion('v1')->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         $dataService = $this->getDataService();
 

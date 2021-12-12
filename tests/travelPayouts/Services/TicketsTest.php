@@ -7,18 +7,18 @@ namespace Tests\TravelPayouts\Services;
 use DateInterval;
 use DateTime;
 use GuzzleHttp\Exception\GuzzleException;
+use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use TravelPayouts\Entity\Ticket;
-use TravelPayouts\Services\DataServiceInterface;
 use TravelPayouts\Services\TicketsService;
 use TravelPayouts\Travel;
 
-class TicketsTest extends BaseServiceTestCase
+class TicketsTest extends TestCase
 {
     use ProphecyTrait;
+    use BaseServiceTrait;
 
     protected TicketsService $service;
-    protected DataServiceInterface $dataService;
 
     public function testGetLatestPrices(): void
     {
@@ -235,21 +235,6 @@ class TicketsTest extends BaseServiceTestCase
         self::assertLessThanOrEqual($departA[1], $ticket->getDepartDate()->getTimestamp());
     }
 
-    public function testGetDirectNotExist(): void
-    {
-        $origin = 'MOW';
-        $destination = 'LED';
-
-        $month = new DateTime('+1 month');
-
-        $depart = $month->setTime(0, 0)->format('Y-m');
-        $return = $month->format('Y-m');
-
-        $ticket = $this->service->getDirect($origin, $destination, $depart, $return);
-
-        $this->assertInstanceOf(Ticket::class, $ticket);
-    }
-
     public function testGetMonthly(): void
     {
         $origin = 'MOW';
@@ -270,6 +255,8 @@ class TicketsTest extends BaseServiceTestCase
     {
         $origin = 'LED';
 
+        $client = $this->getClient('city_direction', true);
+        $this->service->setClient($client->reveal());
         $tickets = $this->service->getPopularRoutesFromCity($origin);
 
         /** @var Ticket $ticket */
@@ -302,7 +289,6 @@ class TicketsTest extends BaseServiceTestCase
         $travel = new Travel('DUMMY_TOKEN');
 
         $this->service = $travel->getTicketsService();
-        $this->dataService = $travel->getDataService();
 
         date_default_timezone_set('UTC');
     }

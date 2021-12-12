@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\TravelPayouts\Services;
 
 use GuzzleHttp\Exception\GuzzleException;
+use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use TravelPayouts\Entity\Airport;
@@ -12,9 +13,10 @@ use TravelPayouts\Entity\City;
 use TravelPayouts\Entity\Country;
 use TravelPayouts\Services\DataService;
 
-class DataTest extends BaseServiceTestCase
+class DataTest extends TestCase
 {
     use ProphecyTrait;
+    use BaseServiceTrait;
 
     /** @var ObjectProphecy|DataService */
     protected $service;

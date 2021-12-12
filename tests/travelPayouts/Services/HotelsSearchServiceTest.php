@@ -6,4 +6,8 @@ use PHPUnit\Framework\TestCase;
 
 class HotelsSearchServiceTest extends TestCase
 {
+    public function testDummy()
+    {
+        $this->assertTrue(true);
+    }
 }

@@ -1,0 +1,117 @@
+{
+  "success": true,
+  "data": {
+    "AAQ": {
+      "origin": "MOW",
+      "destination": "AAQ",
+      "price": 125,
+      "transfers": 0,
+      "airline": "DP",
+      "flight_number": 147,
+      "departure_at": "2017-08-28T20:50:00Z",
+      "return_at": "2017-10-01T12:00:00Z",
+      "expires_at": "2017-07-26T22:49:56Z"
+    },
+    "AER": {
+      "origin": "MOW",
+      "destination": "AER",
+      "price": 68,
+      "transfers": 0,
+      "airline": "N4",
+      "flight_number": 225,
+      "departure_at": "2017-10-22T05:05:00Z",
+      "return_at": "2017-10-28T11:10:00Z",
+      "expires_at": "2017-07-27T05:15:47Z"
+    },
+    "BCN": {
+      "origin": "MOW",
+      "destination": "BCN",
+      "price": 132,
+      "transfers": 0,
+      "airline": "FV",
+      "flight_number": 5731,
+      "departure_at": "2017-07-28T04:25:00Z",
+      "return_at": "2017-08-11T09:25:00Z",
+      "expires_at": "2017-07-27T05:28:13Z"
+    },
+    "EVN": {
+      "origin": "MOW",
+      "destination": "EVN",
+      "price": 134,
+      "transfers": 1,
+      "airline": "DP",
+      "flight_number": 855,
+      "departure_at": "2017-10-10T15:55:00Z",
+      "return_at": "2017-10-17T16:10:00Z",
+      "expires_at": "2017-07-27T03:35:51Z"
+    },
+    "KIV": {
+      "origin": "MOW",
+      "destination": "KIV",
+      "price": 121,
+      "transfers": 0,
+      "airline": "5F",
+      "flight_number": 132,
+      "departure_at": "2017-09-07T19:00:00Z",
+      "return_at": "2017-09-11T22:00:00Z",
+      "expires_at": "2017-07-26T20:54:36Z"
+    },
+    "LED": {
+      "origin": "MOW",
+      "destination": "LED",
+      "price": 34,
+      "transfers": 0,
+      "airline": "DP",
+      "flight_number": 203,
+      "departure_at": "2017-11-23T11:10:00Z",
+      "return_at": "2017-11-30T21:05:00Z",
+      "expires_at": "2017-07-26T12:25:41Z"
+    },
+    "MCX": {
+      "origin": "MOW",
+      "destination": "MCX",
+      "price": 88,
+      "transfers": 0,
+      "airline": "UT",
+      "flight_number": 557,
+      "departure_at": "2017-10-29T10:15:00Z",
+      "return_at": "2017-11-12T21:40:00Z",
+      "expires_at": "2017-07-24T21:19:08Z"
+    },
+    "MRV": {
+      "origin": "MOW",
+      "destination": "MRV",
+      "price": 76,
+      "transfers": 0,
+      "airline": "UT",
+      "flight_number": 273,
+      "departure_at": "2017-09-29T17:30:00Z",
+      "return_at": "2017-10-06T20:50:00Z",
+      "expires_at": "2017-07-26T18:57:47Z"
+    },
+    "SIP": {
+      "origin": "MOW",
+      "destination": "SIP",
+      "price": 86,
+      "transfers": 0,
+      "airline": "N4",
+      "flight_number": 123,
+      "departure_at": "2017-10-28T05:20:00Z",
+      "return_at": "2017-10-28T09:05:00Z",
+      "expires_at": "2017-07-27T04:36:04Z"
+    },
+    "TBS": {
+      "origin": "MOW",
+      "destination": "TBS",
+      "price": 108,
+      "transfers": 1,
+      "airline": "A3",
+      "flight_number": 973,
+      "departure_at": "2018-01-24T05:20:00Z",
+      "return_at": "2018-02-04T11:50:00Z",
+      "expires_at": "2017-07-26T19:58:04Z"
+    }
+  },
+  "error": null,
+  "currency": "usd"
+}

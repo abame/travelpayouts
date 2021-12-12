@@ -4,15 +4,17 @@ namespace Tests\TravelPayouts\Services;
 
 use DateInterval;
 use DateTime;
+use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use TravelPayouts\Entity\HotelLocation;
 use TravelPayouts\Entity\HotelSmall;
 use TravelPayouts\Services\HotelService;
 use TravelPayouts\Travel;
 
-class HotelsServiceTest extends BaseServiceTestCase
+class HotelsServiceTest extends TestCase
 {
     use ProphecyTrait;
+    use BaseServiceTrait;
 
     private HotelService $service;
 
