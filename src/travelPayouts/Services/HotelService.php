@@ -216,6 +216,39 @@ class HotelService extends AbstractService implements ServiceInterface, HotelSer
         return $response;
     }
 
+    public function getHotelAmenities(): array
+    {
+        $url = 'static/amenities';
+
+        $response = $this->getClient()->execute($url, []);
+        if (!is_array($response)) {
+            throw new Exception('Response is not valid');
+        }
+        return $response;
+    }
+
+    public function getHotelCountries(): array
+    {
+        $url = 'static/countries';
+
+        $response = $this->getClient()->execute($url, []);
+        if (!is_array($response)) {
+            throw new Exception('Response is not valid');
+        }
+        return $response;
+    }
+
+    public function getHotelCities(): array
+    {
+        $url = 'static/locations';
+
+        $response = $this->getClient()->execute($url, []);
+        if (!is_array($response)) {
+            throw new Exception('Response is not valid');
+        }
+        return $response;
+    }
+
     public function getHotelsListByLocation(int $id): array
     {
         $arResult = [];
@@ -275,13 +308,45 @@ class HotelService extends AbstractService implements ServiceInterface, HotelSer
         return $response;
     }
 
-    public function getHotelPhoto(int $hotelId, int $photoId, string $photoSize, bool $auto = false): string
+    public function getHotelPhotoIds(string $hotelIds): string
     {
-        $url_example = 'https://cdn.photo.hotellook.com/image_v2/crop/h%s_%s/%s.';
+        $url = 'https://yasen.hotellook.com/photos/hotel_photos?id=%s';
 
-        $url_example .= $auto ? 'auto' : 'jpg';
+        return sprintf($url, $hotelIds);
+    }
 
-        return sprintf($url_example, $hotelId, $photoId, $photoSize);
+    public function getHotelPhotoUrl(int $photoId, bool $auto = false): string
+    {
+        $url = 'https://photo.hotellook.com/image_v2/limit/%s/800/520.';
+
+        $url .= $auto ? 'auto' : 'jpg';
+
+        return sprintf($url, $photoId);
+    }
+
+    public function getSpriteHotelRoomPhotoUrl(int $hotelId, int $groupId, string $firstDimensions, int $photosCount, string $secondDimensions, bool $auto = false): string
+    {
+        $url = 'https://photo.hotellook.com/rooms/sprite/h%s_%s/%s/%d/%s.';
+
+        $url .= $auto ? 'auto' : 'jpg';
+
+        return sprintf($url, $hotelId, $groupId, $firstDimensions, $photosCount - 1, $secondDimensions);
+    }
+
+    public function getHotelRoomPhotoUrl(int $hotelId, int $groupId, int $photoIndex, int $width, int $height, bool $auto = false): string
+    {
+        $url = 'https://photo.hotellook.com/rooms/crop/h%s_%s_%s/%s/%s.';
+
+        $url .= $auto ? 'auto' : 'jpg';
+
+        return sprintf($url, $hotelId, $groupId, $photoIndex, $width, $height);
+    }
+
+    public function getHotelCityPhotoUrl(string $photoSize, string $cityIata): string
+    {
+        $url = 'https://photo.hotellook.com/static/cities/%s/%s.jpg';
+
+        return sprintf($url, $photoSize, $cityIata);
     }
 
     /** @param array<string, array<int, string>|int|string> $item */

@@ -74,6 +74,31 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
         return $this->client->execute($url, $options, 'GET', false);
     }
 
+    public function getSearchResults(
+        string $uuid,
+        string $sortBy = EnumSortHotel::POPULARITY,
+        int $sortAsc = EnumSortAsc::ASCENDING,
+        int $roomsCount = 0,
+        int $limit = 0,
+        int $offset = 0
+    ) {
+        $url = 'search/getResult';
+
+        $options = [
+            'marker' => $this->getMarker(),
+            'searchId' => $uuid,
+            'limit' => $limit,
+            'sortBy' => $sortBy,
+            'offset' => $offset,
+            'sortAsc' => $sortAsc,
+            'roomsCount' => $roomsCount,
+        ];
+
+        $options['signature'] = $this->getSignature($options);
+
+        return $this->client->setApiVersion('v1')->execute($url, $options);
+    }
+
     public function getMarker(): int
     {
         return $this->marker;
@@ -193,31 +218,6 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
         $this->client = $client;
 
         return $this;
-    }
-
-    public function getSearchResults(
-        string $uuid,
-        string $sortBy = EnumSortHotel::POPULARITY,
-        int $sortAsc = EnumSortAsc::ASCENDING,
-        int $roomsCount = 0,
-        int $limit = 0,
-        int $offset = 0
-    ) {
-        $url = 'search/getResult';
-
-        $options = [
-            'marker' => $this->getMarker(),
-            'searchId' => $uuid,
-            'limit' => $limit,
-            'sortBy' => $sortBy,
-            'offset' => $offset,
-            'sortAsc' => $sortAsc,
-            'roomsCount' => $roomsCount,
-        ];
-
-        $options['signature'] = $this->getSignature($options);
-
-        return $this->client->setApiVersion('v1')->execute($url, $options);
     }
 
     public function getHost(): string

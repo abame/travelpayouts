@@ -4,7 +4,6 @@ namespace TravelPayouts\Services;
 
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
-use RuntimeException;
 use TravelPayouts\Entity\Airport;
 use TravelPayouts\Entity\City;
 use TravelPayouts\Entity\Country;
@@ -102,24 +101,6 @@ interface DataServiceInterface
      * @throws GuzzleException
      */
     public function getCountryByName(string $name): ?array;
-
-    /**
-     * @return array<int, array<string, string>>
-     * @throws RuntimeException
-     */
-    public function getHotelAmenities(): array;
-
-    /**
-     * @return array<int, array<string, string|null|array<int, array<string, array<int, array<string, string>>>>>>
-     * @throws RuntimeException
-     */
-    public function getHotelCities(): array;
-
-    /**
-     * @return array<int, array<string, string>>
-     * @throws RuntimeException
-     */
-    public function getHotelCountries(): array;
 
     /**
      * @return array<string, float>

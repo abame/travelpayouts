@@ -4,6 +4,7 @@ namespace TravelPayouts\Services;
 
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
+use TravelPayouts\Enums\TripClass;
 
 interface FlightServiceInterface
 {
@@ -14,7 +15,17 @@ interface FlightServiceInterface
      * @return mixed
      * @throws GuzzleException|Exception
      */
-    public function search(string $locale = 'en', string $trip_class = 'Y');
+    public function search(string $locale = 'en', string $trip_class = TripClass::FLIGHT_SEARCH_ECONOMY);
+
+    /**
+     * Get search results
+     *
+     * @param string $uuid Search ID
+     *
+     * @return mixed
+     * @throws GuzzleException
+     */
+    public function getSearchResults(string $uuid);
 
     public function getMarker(): int;
 
@@ -43,16 +54,6 @@ interface FlightServiceInterface
      * @throws Exception
      */
     public function getSignature(array $options): string;
-
-    /**
-     * Get search results
-     *
-     * @param string $uuid Search ID
-     *
-     * @return mixed
-     * @throws GuzzleException
-     */
-    public function getSearchResults(string $uuid);
 
     /**
      * Add segment

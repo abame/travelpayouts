@@ -33,7 +33,7 @@ interface HotelServiceInterface
      * @param bool $convertCase automatically change the keyboard layout
      *
      * @return array{hotels?: array<int, HotelSmall>, locations?: array<int,HotelLocation|HotelLocationSmall>}
-     * @throws GuzzleException
+     * @throws GuzzleException|Exception
      */
     public function searchHotels(
         string $query,
@@ -123,6 +123,24 @@ interface HotelServiceInterface
     public function getHotelCollectionsTypes(int $id): array;
 
     /**
+     * @return array<string, mixed>
+     * @throws Exception|GuzzleException
+     */
+    public function getHotelAmenities(): array;
+
+    /**
+     * @return array<string, mixed>
+     * @throws Exception|GuzzleException
+     */
+    public function getHotelCountries(): array;
+
+    /**
+     * @return array<string, mixed>
+     * @throws Exception|GuzzleException
+     */
+    public function getHotelCities(): array;
+
+    /**
      * @param int $id location id
      *
      * @return Hotel[]
@@ -145,5 +163,13 @@ interface HotelServiceInterface
      */
     public function getHotelsTypes(string $language = 'en'): array;
 
-    public function getHotelPhoto(int $hotelId, int $photoId, string $photoSize, bool $auto = false): string;
+    public function getHotelPhotoIds(string $hotelIds): string;
+
+    public function getHotelPhotoUrl(int $photoId, bool $auto = false): string;
+
+    public function getSpriteHotelRoomPhotoUrl(int $hotelId, int $groupId, string $firstDimensions, int $photosCount, string $secondDimensions, bool $auto = false): string;
+
+    public function getHotelRoomPhotoUrl(int $hotelId, int $groupId, int $photoIndex, int $width, int $height, bool $auto = false): string;
+
+    public function getHotelCityPhotoUrl(string $photoSize, string $cityIata): string;
 }

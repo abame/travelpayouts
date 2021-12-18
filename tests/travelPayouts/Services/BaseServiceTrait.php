@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\TravelPayouts\Services;
 
 use GuzzleHttp\ClientInterface;
@@ -9,6 +11,7 @@ use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 use TravelPayouts\Components\BaseClient;
+use TravelPayouts\Components\Client;
 use TravelPayouts\Components\HotelClient;
 
 trait BaseServiceTrait
@@ -17,12 +20,15 @@ trait BaseServiceTrait
      * @return ObjectProphecy|ClientInterface|BaseClient
      * @throws GuzzleException
      */
-    protected function getClient(string $dataName, bool $isBaseClient = false, bool $isHotelClient = false)
+    protected function getClient(string $dataName = '', bool $isBaseClient = false, bool $isHotelClient = false)
     {
-        $data = $this->getData($dataName);
         /** @var ObjectProphecy|StreamInterface $stream */
         $stream = $this->prophesize(StreamInterface::class);
-        $stream->getContents()->willReturn($data);
+        $data = null;
+        if (strlen($dataName) > 0) {
+            $data = $this->getData($dataName);
+            $stream->getContents()->willReturn($data);
+        }
 
         /** @var ObjectProphecy|ResponseInterface $response */
         $response = $this->prophesize(ResponseInterface::class);
@@ -35,7 +41,7 @@ trait BaseServiceTrait
 
         if ($isBaseClient || $isHotelClient) {
             /** @var ObjectProphecy|BaseClient|HotelClient $baseClient */
-            $baseClient = $this->prophesize(BaseClient::class);
+            $baseClient = $this->prophesize(Client::class);
             if ($isHotelClient) {
                 $baseClient = $this->prophesize(HotelClient::class);
             }

@@ -7,19 +7,18 @@ namespace Tests\TravelPayouts\Services;
 use GuzzleHttp\Exception\GuzzleException;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 use TravelPayouts\Entity\Airport;
 use TravelPayouts\Entity\City;
 use TravelPayouts\Entity\Country;
 use TravelPayouts\Services\DataService;
+use TravelPayouts\Services\DataServiceInterface;
 
 class DataTest extends TestCase
 {
     use ProphecyTrait;
     use BaseServiceTrait;
 
-    /** @var ObjectProphecy|DataService */
-    protected $service;
+    protected DataServiceInterface $service;
 
     public function testWhereAmI(): void
     {
@@ -28,15 +27,6 @@ class DataTest extends TestCase
         $this->assertEquals('Frankfurt', $data['name']);
         $this->assertEquals('Germany', $data['country_name']);
         $this->assertEquals('8.570773:50.050735', $data['coordinates']);
-    }
-
-    /** @throws GuzzleException */
-    public function testGetCurrencies(): void
-    {
-        $response = $this->service->getCurrencies();
-
-        self::assertArrayHasKey('usd', $response);
-        self::assertArrayHasKey('eur', $response);
     }
 
     public function testGetCity(): void
@@ -48,7 +38,7 @@ class DataTest extends TestCase
 
         $client = $this->getClient('cities', true);
         $this->service->setClient($client->reveal());
-        $city = $this->service->getPlace($code);
+        $city = $this->service->getCity($code);
 
         $this->assertInstanceOf(City::class, $city);
         $this->assertEquals($code, $city->getIata());
@@ -56,6 +46,22 @@ class DataTest extends TestCase
         $this->assertEquals($coordinates, $city->getCoordinates());
         $this->assertNull($city->getCountry());
         $this->assertEquals($timeZone, $city->getTimeZone());
+    }
+
+    public function testGetCountry(): void
+    {
+        $code = 'US';
+        $name = 'United States';
+        $currency = 'USD';
+
+        $client = $this->getClient('countries', true);
+        $this->service->setClient($client->reveal());
+        $country = $this->service->getCountry($code);
+
+        $this->assertInstanceOf(Country::class, $country);
+        $this->assertEquals($code, $country->getIata());
+        $this->assertEquals($name, $country->getName());
+        $this->assertEquals($currency, $country->getCurrency());
     }
 
     public function testGetAirport(): void
@@ -75,22 +81,6 @@ class DataTest extends TestCase
         $this->assertEquals($coordinates, $airport->getCoordinates());
         $this->assertNull($airport->getCity()->getCountry());
         $this->assertEquals($timeZone, $airport->getTimeZone());
-    }
-
-    public function testGetCountry(): void
-    {
-        $code = 'US';
-        $name = 'United States';
-        $currency = 'USD';
-
-        $client = $this->getClient('countries', true);
-        $this->service->setClient($client->reveal());
-        $country = $this->service->getCountry($code);
-
-        $this->assertInstanceOf(Country::class, $country);
-        $this->assertEquals($code, $country->getIata());
-        $this->assertEquals($name, $country->getName());
-        $this->assertEquals($currency, $country->getCurrency());
     }
 
     public function testGetAirlines(): void
@@ -140,6 +130,15 @@ class DataTest extends TestCase
             self::assertArrayHasKey('airline_iata', $item);
             self::assertArrayHasKey('departure_airport_iata', $item);
         }
+    }
+
+    /** @throws GuzzleException */
+    public function testGetCurrencies(): void
+    {
+        $response = $this->service->getCurrencies();
+
+        self::assertArrayHasKey('usd', $response);
+        self::assertArrayHasKey('eur', $response);
     }
 
     protected function setUp(): void

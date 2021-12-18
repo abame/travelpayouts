@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TravelPayouts\Enums;
 
-interface EnumSortHotel
+class EnumSortHotel
 {
     public const POPULARITY = 'popularity';
 

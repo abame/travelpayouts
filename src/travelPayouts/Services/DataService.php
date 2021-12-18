@@ -201,74 +201,6 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
         return $this->getClient()->executeJson('/data/en/routes.json');
     }
 
-    public function getHotelAmenities(): array
-    {
-        $fileName = 'hotels/amenities.json';
-
-        $sResult = self::getPath($fileName);
-
-        if (!is_string($sResult)) {
-            throw new RuntimeException(sprintf('File %s does not exists. Reinstall package.', $fileName));
-        }
-
-        /** @var string $response */
-        $response = file_get_contents($sResult);
-        /** @var bool|array<int, array<string, string>> $hotelAmenities */
-        $hotelAmenities = json_decode($response, true);
-
-        if (is_bool($hotelAmenities)) {
-            throw new RuntimeException(sprintf('Unable to decode json response: %s', $response));
-        }
-
-        return $hotelAmenities;
-    }
-
-    public function getHotelCities(): array
-    {
-        $fileName = 'hotels/locations.json';
-
-        $sResult = self::getPath($fileName);
-
-        if (!is_string($sResult)) {
-            throw new RuntimeException(sprintf('File %s does not exists. Reinstall package.', $fileName));
-        }
-
-        /** @var string $response */
-        $response = file_get_contents($sResult);
-
-        /** @var bool|array<int, array<string, string|null|array<int, array<string, array<int, array<string, string>>>>>> $hotelCities */
-        $hotelCities = json_decode($response, true);
-
-        if (is_bool($hotelCities)) {
-            throw new RuntimeException(sprintf('Unable to decode json response: %s', $response));
-        }
-
-        return $hotelCities;
-    }
-
-    public function getHotelCountries(): array
-    {
-        $fileName = 'hotels/countries.json';
-
-        $sResult = self::getPath($fileName);
-
-        if (!is_string($sResult)) {
-            throw new RuntimeException(sprintf('File %s does not exists. Reinstall package.', $fileName));
-        }
-
-        /** @var string $response */
-        $response = file_get_contents($sResult);
-
-        /** @var bool|array<int, array<string, string>> $hotelCountries */
-        $hotelCountries = json_decode($response, true);
-
-        if (is_bool($hotelCountries)) {
-            throw new RuntimeException(sprintf('Unable to decode json response: %s', $response));
-        }
-
-        return $hotelCountries;
-    }
-
     public function getCurrencies(): array
     {
         $uri = 'https://yasen.aviasales.ru/adaptors/currency.json';
@@ -343,13 +275,5 @@ class DataService extends AbstractService implements ServiceInterface, DataServi
             ->setNameTranslations($airport['name_translations'])
             ->setTimeZone($airport['time_zone'])
             ->setCity($this->getCity($airport['city_code']));
-    }
-
-    /** @return bool|string */
-    private static function getPath(string $fileName)
-    {
-        $path = __DIR__ . '/../data/' . $fileName;
-
-        return file_exists($path) ? $path : false;
     }
 }

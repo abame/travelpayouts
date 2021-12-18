@@ -9,6 +9,7 @@ use Exception;
 use TravelPayouts\Components\AbstractService;
 use TravelPayouts\Components\Client;
 use TravelPayouts\Components\ServiceInterface;
+use TravelPayouts\Enums\TripClass;
 
 class FlightService extends AbstractService implements ServiceInterface, FlightServiceInterface
 {
@@ -32,7 +33,7 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
         'infants' => 0,
     ];
 
-    public function search(string $locale = 'en', string $trip_class = 'Y')
+    public function search(string $locale = 'en', string $trip_class = TripClass::FLIGHT_SEARCH_ECONOMY)
     {
         $url = 'flight_search';
 
@@ -42,7 +43,7 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
                 'host' => $this->getHost(),
                 'user_ip' => $this->getIp(),
                 'locale' => in_array($locale, ['en', 'ru', 'de', 'fr', 'it', 'pl', 'th'], true) ? $locale : 'ru',
-                'trip_class' => in_array($trip_class, ['Y', 'C'], true) ? $trip_class : 'Y',
+                'trip_class' => in_array($trip_class, [TripClass::FLIGHT_SEARCH_ECONOMY, TripClass::FLIGHT_SEARCH_BUSINESS], true) ? $trip_class : TripClass::FLIGHT_SEARCH_ECONOMY,
                 'passengers' => $this->getPassengers(),
                 'segments' => $this->getSegments(),
                 'currency' => $this->getCurrency()
@@ -52,6 +53,17 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
         $options['json']['signature'] = $this->getSignature($options['json']);
 
         return $this->client->setApiVersion('v1')->execute($url, $options, 'POST', false);
+    }
+
+    public function getSearchResults(string $uuid)
+    {
+        $url = 'flight_search_results';
+
+        $options = [
+            'uuid' => $uuid,
+        ];
+
+        return $this->client->setApiVersion('v1')->execute($url, $options);
     }
 
     public function getMarker(): int
@@ -157,17 +169,6 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
         $this->client->setApiVersion('v1');
 
         return $this;
-    }
-
-    public function getSearchResults(string $uuid)
-    {
-        $url = 'flight_search_results';
-
-        $options = [
-            'uuid' => $uuid,
-        ];
-
-        return $this->client->setApiVersion('v1')->execute($url, $options);
     }
 
     public function addSegment(string $origin, string $destination, string $date): FlightService
