@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace TravelPayouts\Services;
 
 use Exception;
-use TravelPayouts\Components\AbstractService;
 use TravelPayouts\Components\HotelsClient;
 use TravelPayouts\Components\ServiceInterface;
 use TravelPayouts\Enums\EnumSortAsc;

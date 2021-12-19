@@ -2,19 +2,14 @@
 
 declare(strict_types=1);
 
-namespace TravelPayouts\Components;
+namespace TravelPayouts\Services;
 
 use BadMethodCallException;
 use Exception;
 use RuntimeException;
+use TravelPayouts\Components\BaseClient;
+use TravelPayouts\Components\ServiceInterface;
 use TravelPayouts\config\Services;
-use TravelPayouts\Services\DataService;
-use TravelPayouts\Services\FlightService;
-use TravelPayouts\Services\HotelsSearchService;
-use TravelPayouts\Services\HotelsService;
-use TravelPayouts\Services\HotelsServiceInterface;
-use TravelPayouts\Services\PartnerService;
-use TravelPayouts\Services\TicketsService;
 
 /**
  * @method DataService         getDataService()
@@ -24,7 +19,7 @@ use TravelPayouts\Services\TicketsService;
  * @method HotelsService       getHotelsService()
  * @method HotelsSearchService getHotelsSearchService()
  */
-trait ServiceInjector
+abstract class AbstractService
 {
     /** @var array<string, class-string> */
     private array $serviceMap = [];

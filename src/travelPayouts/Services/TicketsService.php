@@ -7,8 +7,7 @@ namespace TravelPayouts\Services;
 use DateTime;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
-use TravelPayouts\Components\AbstractService;
-use TravelPayouts\Components\Client;
+use TravelPayouts\Components\BaseClient;
 use TravelPayouts\Components\ServiceInterface;
 use TravelPayouts\Entity\Airport;
 use TravelPayouts\Entity\City;
@@ -16,7 +15,7 @@ use TravelPayouts\Entity\Ticket;
 
 class TicketsService extends AbstractService implements ServiceInterface, TicketsServiceInterface
 {
-    private Client $client;
+    private BaseClient $client;
 
     public function getLatestPrices(
         string $origin = '',
@@ -48,19 +47,19 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         ];
 
         /** @var array{success: bool, currency: string, error: string, data: array<int, array<string, string|int|bool>>} $response */
-        $response = $this->client->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         return $this->mapTickets($response, $currency);
     }
 
-    public function getClient()
+    public function getClient(): BaseClient
     {
         return $this->client;
     }
 
     public function setClient($client): self
     {
-        if (!($client instanceof Client)) {
+        if (!($client instanceof BaseClient)) {
             throw new Exception(sprintf('Client of class %s is not allowed here', get_class($client)));
         }
 
@@ -88,7 +87,7 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         ];
 
         /** @var array{success: bool, currency: string, data: array<int, array<string, string|int|bool>>} $response */
-        $response = $this->client->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         return $this->mapTickets($response, $currency);
     }
@@ -119,7 +118,7 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         ];
 
         /** @var array{prices: array<int, array<string, string|int>>, origins: string[], destinations: string[]} $response */
-        $response = $this->client->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         $dataService = $this->getDataService();
 
@@ -168,7 +167,7 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
         ];
 
         /** @var array{success: bool, currency: string, data: array<int, array<string, int|string>>} $response */
-        $response = $this->client->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         return $this->mapTickets($response, $currency);
     }
@@ -197,8 +196,9 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
             'calendar_type' => in_array($calendar_type, ['departure_date', 'return_date'], true) ? $calendar_type : null,
         ];
 
+        $this->getClient()->setApiVersion('v1');
         /** @var array{success: bool, currency: string, data: array<string, array<string, int|string>>} $response */
-        $response = $this->client->setApiVersion('v1')->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         return $this->mapTickets($response, $currency);
     }
@@ -268,8 +268,9 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
             'destination' => $destination,
         ];
 
+        $this->getClient()->setApiVersion('v1');
         /** @var array{success: bool, currency: string, data: array<string, array<string, string|int>>} $response */
-        $response = $this->client->setApiVersion('v1')->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         return $this->mapTickets($response, $currency);
     }
@@ -282,8 +283,9 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
             'origin' => $origin,
         ];
 
+        $this->getClient()->setApiVersion('v1');
         /** @var array{success: bool, currency: string, data: array<string, array<int, array<string, string|int>>>} $response */
-        $response = $this->client->setApiVersion('v1')->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         $dataService = $this->getDataService();
 
@@ -311,8 +313,10 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
             'limit' => $limit,
         ];
 
+        $this->getClient()->setApiVersion('v1');
+
         /** @var array{success: bool, currency: string, error: string|null, data: array<string, int>} $response */
-        $response = $this->client->setApiVersion('v1')->execute($url, $options);
+        $response = $this->getClient()->execute($url, $options);
 
         $dataService = $this->getDataService();
 
@@ -398,6 +402,7 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
             'return_date' => $return_date !== '' ? $return : null,
         ];
 
-        return $this->client->setApiVersion('v1')->execute($url, $options);
+        $this->getClient()->setApiVersion('v1');
+        return $this->getClient()->execute($url, $options);
     }
 }

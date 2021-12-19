@@ -6,15 +6,13 @@ namespace TravelPayouts;
 
 use TravelPayouts\Components\Client;
 use TravelPayouts\Components\HotelsClient;
-use TravelPayouts\Components\ServiceInjector;
+use TravelPayouts\Services\AbstractService;
 
-class Travel
+class Travel extends AbstractService
 {
-    use ServiceInjector;
-
     private Client $client;
 
-    private HotelsClient $hotelsClient;
+    private HotelsClient $hotelClient;
 
     private string $token;
 
@@ -32,7 +30,7 @@ class Travel
 
     public function getHotelClient(): HotelsClient
     {
-        return $this->hotelsClient;
+        return $this->hotelClient;
     }
 
     public function getToken(): string
@@ -51,6 +49,6 @@ class Travel
     private function init(): void
     {
         $this->client = new Client($this->getToken());
-        $this->hotelsClient = new HotelsClient($this->getToken());
+        $this->hotelClient = new HotelsClient($this->getToken());
     }
 }

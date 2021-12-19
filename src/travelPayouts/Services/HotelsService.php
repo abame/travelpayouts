@@ -7,7 +7,6 @@ namespace TravelPayouts\Services;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
-use TravelPayouts\Components\AbstractService;
 use TravelPayouts\Components\Client;
 use TravelPayouts\Components\HotelsClient;
 use TravelPayouts\Components\ServiceInterface;
