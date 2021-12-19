@@ -6,12 +6,10 @@ namespace TravelPayouts;
 
 use TravelPayouts\Components\Client;
 use TravelPayouts\Components\HotelClient;
-use TravelPayouts\Components\ServiceInjector;
+use TravelPayouts\Services\AbstractService;
 
-class Travel
+class Travel extends AbstractService
 {
-    use ServiceInjector;
-
     private Client $client;
 
     private HotelClient $hotelClient;

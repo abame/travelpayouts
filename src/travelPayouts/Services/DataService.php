@@ -9,7 +9,6 @@ use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use RuntimeException;
-use TravelPayouts\Components\AbstractService;
 use TravelPayouts\Components\BaseClient;
 use TravelPayouts\Components\ServiceInterface;
 use TravelPayouts\Entity\Airport;

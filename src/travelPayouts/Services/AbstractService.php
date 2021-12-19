@@ -2,28 +2,23 @@
 
 declare(strict_types=1);
 
-namespace TravelPayouts\Components;
+namespace TravelPayouts\Services;
 
 use BadMethodCallException;
 use Exception;
 use RuntimeException;
+use TravelPayouts\Components\BaseClient;
+use TravelPayouts\Components\ServiceInterface;
 use TravelPayouts\config\Services;
-use TravelPayouts\Services\DataService;
-use TravelPayouts\Services\FlightService;
-use TravelPayouts\Services\HotelSearchService;
-use TravelPayouts\Services\HotelSearchServiceInterface;
-use TravelPayouts\Services\HotelService;
-use TravelPayouts\Services\HotelServiceInterface;
-use TravelPayouts\Services\TicketsService;
 
 /**
- * @method DataService         getDataService()
- * @method FlightService       getFlightService()
- * @method TicketsService      getTicketsService()
- * @method HotelService       getHotelService()
- * @method HotelSearchService getHotelSearchService()
+ * @method DataService        getDataService()
+ * @method FlightService      getFlightService()
+ * @method TicketsService     getTicketsService()
+ * @method HotelService       getHotelsService()
+ * @method HotelSearchService getHotelsSearchService()
  */
-trait ServiceInjector
+abstract class AbstractService
 {
     /** @var array<string, class-string> */
     private array $serviceMap = [];
@@ -58,11 +53,11 @@ trait ServiceInjector
 
         /** @var BaseClient|null $client */
         $client = null;
-        if (($service instanceof HotelServiceInterface || $service instanceof HotelSearchServiceInterface) && method_exists($this, 'getHotelClient')) {
+        if ($service instanceof HotelServiceInterface && method_exists($this, 'getHotelClient')) {
             $client = $this->getHotelClient();
         }
 
-        if (!($service instanceof HotelServiceInterface || $service instanceof HotelSearchServiceInterface) && method_exists($this, 'getClient')) {
+        if (!($service instanceof HotelServiceInterface) && method_exists($this, 'getClient')) {
             $client = $this->getClient();
         }
         if ($client === null || $client instanceof ServiceInterface) {

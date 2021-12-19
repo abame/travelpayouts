@@ -7,7 +7,6 @@ namespace TravelPayouts\Services;
 use DateTime;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
-use TravelPayouts\Components\AbstractService;
 use TravelPayouts\Components\BaseClient;
 use TravelPayouts\Components\ServiceInterface;
 use TravelPayouts\Entity\Airport;

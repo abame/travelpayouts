@@ -6,7 +6,6 @@ namespace TravelPayouts\Services;
 
 use DateTime;
 use Exception;
-use TravelPayouts\Components\AbstractService;
 use TravelPayouts\Components\Client;
 use TravelPayouts\Components\ServiceInterface;
 use TravelPayouts\Enums\TripClass;
