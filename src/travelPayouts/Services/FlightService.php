@@ -52,7 +52,8 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
 
         $options['json']['signature'] = $this->getSignature($options['json']);
 
-        return $this->client->setApiVersion('v1')->execute($url, $options, 'POST', false);
+        $this->client->setApiVersion('v1');
+        return $this->client->execute($url, $options, 'POST', false);
     }
 
     public function getSearchResults(string $uuid)
@@ -63,7 +64,8 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
             'uuid' => $uuid,
         ];
 
-        return $this->client->setApiVersion('v1')->execute($url, $options);
+        $this->client->setApiVersion('v1');
+        return $this->client->execute($url, $options);
     }
 
     public function getMarker(): int

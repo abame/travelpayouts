@@ -20,7 +20,7 @@ trait BaseServiceTrait
      * @return ObjectProphecy|ClientInterface|BaseClient
      * @throws GuzzleException
      */
-    protected function getClient(string $dataName = '', bool $isBaseClient = false, bool $isHotelClient = false)
+    protected function getClient(string $dataName = '', bool $isBaseClient = false, bool $isHotelClient = false, bool $executeAdditionalParams = false)
     {
         /** @var ObjectProphecy|StreamInterface $stream */
         $stream = $this->prophesize(StreamInterface::class);
@@ -48,7 +48,16 @@ trait BaseServiceTrait
             $baseClient->getToken()->willReturn('DUMMY_TOKEN');
             $baseClient->setApiVersion(Argument::type('string'));
             $baseClient->getClient()->willReturn($client->reveal());
-            $baseClient->execute(Argument::type('string'), Argument::type('array'))->willReturn(json_decode($data, true));
+            if ($executeAdditionalParams) {
+                $baseClient->execute(
+                    Argument::type('string'),
+                    Argument::type('array'),
+                    Argument::type('string'),
+                    Argument::type('bool')
+                )->willReturn(json_decode($data, true));
+            } else {
+                $baseClient->execute(Argument::type('string'), Argument::type('array'))->willReturn(json_decode($data, true));
+            }
             $baseClient->executeJson(Argument::type('string'))->willReturn(json_decode($data, true));
             return $baseClient;
         }

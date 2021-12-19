@@ -22,12 +22,32 @@ class FlightServiceTest extends TestCase
 
     public function testSearch(): void
     {
-        $this->assertTrue(true);
+        $client = $this->getClient('flight_search', true, false, true);
+        $this->service->setMarker(1234)
+        ->setHost('dummy_host')
+        ->setIp('1234')
+        ->setCurrency('eur');
+        $this->service->setClient($client->reveal());
+        $data = $this->service->search();
+        $this->assertCount(35, $data);
+        $this->assertArrayHasKey('metropoly_airports', $data);
+        $this->assertCount(2, $data['metropoly_airports']);
+        $this->assertArrayHasKey('currency_rates', $data);
+        $this->assertCount(175, $data['currency_rates']);
     }
 
     public function testGetSearchResults(): void
     {
-        $this->assertTrue(true);
+        $client = $this->getClient('flight_search_results', true);
+        $this->service->setClient($client->reveal());
+        $data = $this->service->getSearchResults('076efe05-eeda-4c30-8e9a-1c36ec565916');
+        $this->assertCount(50, $data);
+        $this->assertArrayHasKey('proposals', $data[0]);
+        $this->assertArrayHasKey('airports', $data[0]);
+        $this->assertArrayHasKey('airlines', $data[0]);
+        $this->assertArrayHasKey('flight_info', $data[0]);
+        $this->assertArrayHasKey('gates_info', $data[0]);
+        $this->assertArrayHasKey('search_id', $data[0]);
     }
 
     public function testGetSignature(): void
