@@ -15,7 +15,7 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
 {
     private Client $client;
 
-    private int $marker;
+    private string $marker;
 
     private string $host;
 
@@ -68,12 +68,12 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
         return $this->client->execute($url, $options);
     }
 
-    public function getMarker(): int
+    public function getMarker(): string
     {
         return $this->marker;
     }
 
-    public function setMarker(int $marker): FlightService
+    public function setMarker(string $marker): FlightService
     {
         $this->marker = $marker;
 
@@ -128,6 +128,7 @@ class FlightService extends AbstractService implements ServiceInterface, FlightS
 
     public function getSignature(array $options): string
     {
+        $options['marker'] = $this->getMarker();
         ksort($options);
 
         /** @var array<string, int> $passengers */

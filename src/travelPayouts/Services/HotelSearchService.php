@@ -15,7 +15,7 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
 {
     private HotelClient $client;
 
-    private int $marker;
+    private string $marker;
 
     private string $ip;
 
@@ -33,15 +33,22 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
 
     private int $childrenCount;
 
+    private int $childAge1 = 1;
+
+    private int $childAge2 = 1;
+
+    private int $childAge3 = 1;
+
     private int $timeout = 20;
 
     private string $customerIP;
 
     private string $host;
 
-    public function search(string $locale = 'en_US', string $currency = 'USD')
+    public function search(string $locale = 'en_US', string $currency = 'EUR')
     {
         $url = 'search/start';
+        $locale = in_array($locale, ['en', 'ru', 'de', 'fr', 'it', 'pl', 'th'], true) ? $locale : 'en';
 
         $options = [
             'marker' => $this->getMarker(),
@@ -49,22 +56,13 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
             'checkIn' => $this->getCheckIn(),
             'checkOut' => $this->getCheckOut(),
             'childrenCount' => $this->getChildrenCount(),
+            'childAge1' => $this->getChildrenCount() > 0 ? $this->getChildAge1() : 0,
+            'childAge2' => $this->getChildrenCount() > 1 ? $this->getChildAge2() : 0,
+            'childAge3' => $this->getChildrenCount() > 2 ? $this->getChildAge3() : 0,
             'currency' => $currency,
             'customerIP' => $this->getCustomerIP(),
             'iata' => $this->getIata(),
-            'lang' => in_array($locale, [
-                'en_US',
-                'en_GB',
-                'de_DE',
-                'en_AU',
-                'en_CA',
-                'en_IE',
-                'es_ES',
-                'fr_FR',
-                'it_IT',
-                'pl_PL',
-                'th_TH',
-            ], true) ? $locale : 'en_US',
+            'lang' => $locale,
             'timeout' => $this->getTimeout(),
             'waitForResults' => '1',
         ];
@@ -99,12 +97,22 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
         return $this->client->setApiVersion('v1')->execute($url, $options);
     }
 
-    public function getMarker(): int
+    public function getSignature(array $options): string
+    {
+        unset($options['marker']);
+        ksort($options);
+        $signatureString = sprintf('%s:%s', $this->client->getToken(), $this->getMarker());
+        $signatureString = sprintf('%s:%s', $signatureString, implode(':', $options));
+
+        return md5($signatureString);
+    }
+
+    public function getMarker(): string
     {
         return $this->marker;
     }
 
-    public function setMarker(int $marker): self
+    public function setMarker(string $marker): self
     {
         $this->marker = $marker;
 
@@ -159,6 +167,36 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
         return $this;
     }
 
+    public function getChildAge1(): int
+    {
+        return $this->childAge1;
+    }
+
+    public function setChildAge1(int $childAge1): void
+    {
+        $this->childAge1 = $childAge1;
+    }
+
+    public function getChildAge2(): int
+    {
+        return $this->childAge2;
+    }
+
+    public function setChildAge2(int $childAge2): void
+    {
+        $this->childAge2 = $childAge2;
+    }
+
+    public function getChildAge3(): int
+    {
+        return $this->childAge3;
+    }
+
+    public function setChildAge3(int $childAge3): void
+    {
+        $this->childAge3 = $childAge3;
+    }
+
     public function getCustomerIP(): string
     {
         return $this->customerIP;
@@ -193,15 +231,6 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
         $this->timeout = $timeout;
 
         return $this;
-    }
-
-    public function getSignature(array $options): string
-    {
-        $options['token'] = $this->client->getToken();
-
-        ksort($options);
-
-        return md5(implode(':', $options));
     }
 
     public function getClient()

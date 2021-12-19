@@ -15,42 +15,7 @@ interface HotelSearchServiceInterface
      * @return mixed
      * @throws GuzzleException
      */
-    public function search(string $locale = 'en_US', string $currency = 'USD');
-
-    public function getMarker(): int;
-
-    public function setMarker(int $marker): self;
-
-    public function getAdultsCount(): int;
-
-    public function setAdultsCount(int $adultsCount): self;
-
-    public function getCheckIn(): string;
-
-    public function setCheckIn(string $checkIn): self;
-
-    public function getCheckOut(): string;
-
-    public function setCheckOut(string $checkOut): self;
-
-    public function getChildrenCount(): int;
-
-    public function setChildrenCount(int $childrenCount): self;
-
-    public function getCustomerIP(): string;
-
-    public function setCustomerIP(string $customerIP): self;
-
-    public function getIata(): string;
-
-    public function setIata(string $iata): self;
-
-    public function getTimeout(): int;
-
-    public function setTimeout(int $timeout): self;
-
-    /** @param array<string, int|string> $options */
-    public function getSignature(array $options): string;
+    public function search(string $locale = 'en_US', string $currency = 'EUR');
 
     /**
      * Get search results
@@ -80,6 +45,41 @@ interface HotelSearchServiceInterface
         int $limit = 0,
         int $offset = 0
     );
+
+    /** @param array<string, int|string> $options */
+    public function getSignature(array $options): string;
+
+    public function getMarker(): string;
+
+    public function setMarker(string $marker): self;
+
+    public function getAdultsCount(): int;
+
+    public function setAdultsCount(int $adultsCount): self;
+
+    public function getCheckIn(): string;
+
+    public function setCheckIn(string $checkIn): self;
+
+    public function getCheckOut(): string;
+
+    public function setCheckOut(string $checkOut): self;
+
+    public function getChildrenCount(): int;
+
+    public function setChildrenCount(int $childrenCount): self;
+
+    public function getCustomerIP(): string;
+
+    public function setCustomerIP(string $customerIP): self;
+
+    public function getIata(): string;
+
+    public function setIata(string $iata): self;
+
+    public function getTimeout(): int;
+
+    public function setTimeout(int $timeout): self;
 
     public function getHost(): string;
 

@@ -14,13 +14,11 @@ use TravelPayouts\Services\HotelSearchService;
 use TravelPayouts\Services\HotelSearchServiceInterface;
 use TravelPayouts\Services\HotelService;
 use TravelPayouts\Services\HotelServiceInterface;
-use TravelPayouts\Services\PartnerService;
 use TravelPayouts\Services\TicketsService;
 
 /**
  * @method DataService         getDataService()
  * @method FlightService       getFlightService()
- * @method PartnerService      getPartnerService()
  * @method TicketsService      getTicketsService()
  * @method HotelService       getHotelService()
  * @method HotelSearchService getHotelSearchService()

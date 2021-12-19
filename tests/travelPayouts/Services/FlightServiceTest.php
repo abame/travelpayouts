@@ -23,7 +23,7 @@ class FlightServiceTest extends TestCase
     public function testSearch(): void
     {
         $client = $this->getClient('flight_search', true, false, true);
-        $this->service->setMarker(1234)
+        $this->service->setMarker('1234')
         ->setHost('dummy_host')
         ->setIp('1234')
         ->setCurrency('eur');
@@ -58,27 +58,31 @@ class FlightServiceTest extends TestCase
         $client->setApiVersion('v1');
 
         $this->service->setClient($client->reveal());
+        $this->service->setMarker('123');
         $signature = $this->service->getSignature([
-            'marker' => 123,
-            'host' => 'dummy_host',
-            'user_ip' => 'dummy_ip',
+            'host' => 'beta.aviasales.ru',
             'locale' => 'en',
             'trip_class' => TripClass::FLIGHT_SEARCH_ECONOMY,
+            'user_ip' => '94.220.248.74',
             'passengers' => [
                 PassengerTypes::ADULTS => 1,
-                PassengerTypes::CHILDREN => 1,
-                PassengerTypes::INFANTS => 1,
+                PassengerTypes::CHILDREN => 0,
+                PassengerTypes::INFANTS => 0,
             ],
             'segments' => [
                 [
-                    'origin' => 'CPH',
-                    'destination' => 'ROM',
-                    'date' => '2021-06-24',
+                    'origin' => 'BAX',
+                    'destination' => 'MOW',
+                    'date' => '2021-12-24',
+                ],
+                [
+                    'origin' => 'MOW',
+                    'destination' => 'BAX',
+                    'date' => '2021-12-25',
                 ]
-            ],
-            'currency' => 'EUR'
+            ]
         ]);
-        $this->assertSame('d0d6a1d6e6c3a78bbb78c71612be98c9', $signature);
+        $this->assertSame('a6fcf20929a5651391307d1f1bae4f6b', $signature);
     }
 
     public function testSegments(): void

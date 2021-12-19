@@ -27,9 +27,9 @@ interface FlightServiceInterface
      */
     public function getSearchResults(string $uuid);
 
-    public function getMarker(): int;
+    public function getMarker(): string;
 
-    public function setMarker(int $marker): self;
+    public function setMarker(string $marker): self;
 
     public function getHost(): string;
 
