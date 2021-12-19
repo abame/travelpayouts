@@ -23,10 +23,11 @@ class DataTest extends TestCase
     public function testWhereAmI(): void
     {
         $data = $this->service->whereAmI('92.219.161.223', 'en');
-        $this->assertEquals('FRA', $data['iata']);
-        $this->assertEquals('Frankfurt', $data['name']);
-        $this->assertEquals('Germany', $data['country_name']);
-        $this->assertEquals('8.570773:50.050735', $data['coordinates']);
+        $this->assertCount(4, $data);
+        $this->assertArrayHasKey('iata', $data);
+        $this->assertArrayHasKey('name', $data);
+        $this->assertArrayHasKey('country_name', $data);
+        $this->assertArrayHasKey('coordinates', $data);
     }
 
     public function testGetCity(): void
