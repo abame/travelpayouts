@@ -163,7 +163,11 @@ interface HotelServiceInterface
      */
     public function getHotelsTypes(string $language = 'en'): array;
 
-    public function getHotelPhotoIds(string $hotelIds): string;
+    /**
+     * @return array<string, mixed>
+     * @throws GuzzleException|Exception
+     */
+    public function getHotelPhotoIds(string $hotelIds): array;
 
     public function getHotelPhotoUrl(int $photoId, bool $auto = false): string;
 
@@ -171,5 +175,6 @@ interface HotelServiceInterface
 
     public function getHotelRoomPhotoUrl(int $hotelId, int $groupId, int $photoIndex, int $width, int $height, bool $auto = false): string;
 
+    /** @param string $photoSize Format 100x100 */
     public function getHotelCityPhotoUrl(string $photoSize, string $cityIata): string;
 }

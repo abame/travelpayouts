@@ -67,25 +67,17 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
             'lang' => $locale,
             'timeout' => $this->getTimeout(),
             'waitForResults' => $waitForResults,
+            'iata' => $this->getIata(),
+            'cityId' => $this->getCityId(),
+            'hotelId' => $this->getHotelId(),
+            'childAge1' => $this->getChildAge1(),
+            'childAge2' => $this->getChildAge2(),
+            'childAge3' => $this->getChildAge3(),
         ];
-        if ($this->getIata() !== null) {
-            $options['iata'] = $this->getIata();
-        }
-        if ($this->getCityId() !== null) {
-            $options['cityId'] = $this->getCityId();
-        }
-        if ($this->getHotelId() !== null) {
-            $options['hotelId'] = $this->getHotelId();
-        }
-        if ($this->getChildrenCount() >= 1) {
-            $options['childAge1'] = $this->getChildAge1();
-        }
-        if ($this->getChildrenCount() >= 2) {
-            $options['childAge2'] = $this->getChildAge2();
-        }
-        if ($this->getChildrenCount() === 3) {
-            $options['childAge3'] = $this->getChildAge3();
-        }
+
+        $options = array_filter($options, function ($option) {
+            return $option !== null;
+        });
 
         $options['signature'] = $this->getSignature($options);
 

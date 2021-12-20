@@ -47,7 +47,7 @@ interface HotelSearchServiceInterface
         int $offset = 0
     );
 
-    /** @param array<string, int|string> $options */
+    /** @param array<string, int|string|null> $options */
     public function getSignature(array $options): string;
 
     public function getMarker(): string;

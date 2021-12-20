@@ -307,11 +307,11 @@ class HotelService extends AbstractService implements ServiceInterface, HotelSer
         return $response;
     }
 
-    public function getHotelPhotoIds(string $hotelIds): string
+    public function getHotelPhotoIds(string $hotelIds): array
     {
         $url = 'https://yasen.hotellook.com/photos/hotel_photos?id=%s';
 
-        return sprintf($url, $hotelIds);
+        return $this->getClient()->executeJson(sprintf($url, $hotelIds));
     }
 
     public function getHotelPhotoUrl(int $photoId, bool $auto = false): string

@@ -1,0 +1,28 @@
+[
+  {
+    "state_code": null,
+    "id": "1493250",
+    "latitude": "47.58371000",
+    "longitude": "9.62265000",
+    "name": [
+      {
+        "EN": [
+          {
+            "name": "Hattnau",
+            "isVariation": "0"
+          }
+        ]
+      },
+      {
+        "RU": [
+          {
+            "name": "Hattnau",
+            "isVariation": "0"
+          }
+        ]
+      }
+    ],
+    "countryId": "165",
+    "code": null
+  }
+]

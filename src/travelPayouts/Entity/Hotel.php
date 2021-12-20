@@ -16,9 +16,9 @@ class Hotel
 
     private float $rating;
 
-    private string $popularity;
+    private int $popularity;
 
-    private string $propertyType;
+    private int $propertyType;
 
     private string $checkOut;
 
@@ -43,9 +43,11 @@ class Hotel
     /** @var string[] */
     private array $location;
 
-    private string $name;
+    /** @var array<string, string> */
+    private array $name;
 
-    private string $address;
+    /** @var array<string, string> */
+    private array $address;
 
     private string $link;
 
@@ -114,24 +116,24 @@ class Hotel
         return $this;
     }
 
-    public function getPopularity(): string
+    public function getPopularity(): int
     {
         return $this->popularity;
     }
 
-    public function setPopularity(string $popularity): Hotel
+    public function setPopularity(int $popularity): Hotel
     {
         $this->popularity = $popularity;
 
         return $this;
     }
 
-    public function getPropertyType(): string
+    public function getPropertyType(): int
     {
         return $this->propertyType;
     }
 
-    public function setPropertyType(string $propertyType): Hotel
+    public function setPropertyType(int $propertyType): Hotel
     {
         $this->propertyType = $propertyType;
 
@@ -256,24 +258,28 @@ class Hotel
         return $this;
     }
 
-    public function getName(): string
+    /** @return array<string, string> */
+    public function getName(): array
     {
         return $this->name;
     }
 
-    public function setName(string $name): Hotel
+    /** @param array<string, string> $name*/
+    public function setName(array $name): Hotel
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getAddress(): string
+    /** @return array<string, string> */
+    public function getAddress(): array
     {
         return $this->address;
     }
 
-    public function setAddress(string $address): Hotel
+    /** @param array<string, string> $address*/
+    public function setAddress(array $address): Hotel
     {
         $this->address = $address;
 
