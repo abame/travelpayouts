@@ -11,11 +11,12 @@ interface HotelSearchServiceInterface
     /**
      * @param string $locale
      * @param string $currency
+     * @param int $waitForResults
      *
      * @return mixed
      * @throws GuzzleException
      */
-    public function search(string $locale = 'en_US', string $currency = 'EUR');
+    public function search(string $locale = 'en', string $currency = 'EUR', int $waitForResults = 0);
 
     /**
      * Get search results
@@ -73,27 +74,27 @@ interface HotelSearchServiceInterface
 
     public function setCustomerIP(string $customerIP): self;
 
-    public function getIata(): string;
+    public function getIata(): ?string;
 
-    public function setIata(string $iata): self;
+    public function setIata(?string $iata): self;
 
     public function getTimeout(): int;
 
     public function setTimeout(int $timeout): self;
 
-    public function getHost(): string;
+    public function getHost(): ?string;
 
-    public function setHost(string $host): self;
+    public function setHost(?string $host): self;
 
     public function getIp(): string;
 
     public function setIp(string $ip): self;
 
-    public function getCityId(): int;
+    public function getCityId(): ?int;
 
-    public function setCityId(int $cityId): self;
+    public function setCityId(?int $cityId): self;
 
-    public function getHotelId(): int;
+    public function getHotelId(): ?int;
 
-    public function setHotelId(int $hotelId): self;
+    public function setHotelId(?int $hotelId): self;
 }

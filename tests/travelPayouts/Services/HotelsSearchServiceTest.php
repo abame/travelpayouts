@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\TravelPayouts\Services;
 
 use PHPUnit\Framework\TestCase;
@@ -32,23 +34,48 @@ class HotelsSearchServiceTest extends TestCase
             'customerIP' => '94.220.248.74',
             'childrenCount' => 1,
             'childAge1' => 12,
-            'lang' => 'en_US',
+            'lang' => 'en',
             'currency' => 'EUR',
             'waitForResults' => 0,
-            'marker' => 78606,
             'iata' => 'HKT'
         ]);
-        $this->assertSame('e7b35db9b73ac49b2e9d56754c80b6da', $signature);
+        $this->assertSame('551c1e09882439deb70fd4ca10febca8', $signature);
     }
 
     public function testSearch()
     {
-        $this->assertTrue(true);
+        $client = $this->getClient('hotel_search_id', false, true, true);
+        $client->getToken()->willReturn('DUMMY_TOKEN');
+        $this->service->setClient($client->reveal());
+
+        $this->service->setCheckIn('2021-12-10');
+        $this->service->setCheckOut('2021-12-13');
+        $this->service->setAdultsCount(2);
+        $this->service->setCustomerIP('77.111.247.75');
+        $this->service->setChildrenCount(1);
+        $this->service->setChildAge1(10);
+        $this->service->setMarker('344747');
+        $this->service->setIata('HKT');
+
+        $data = $this->service->search('ru', 'USD');
+
+        $this->assertCount(2, $data);
+        $this->assertArrayHasKey('searchId', $data);
+        $this->assertArrayHasKey('status', $data);
+        $this->assertSame('ok', $data['status']);
     }
 
     public function testGetSearchResults()
     {
-        $this->assertTrue(true);
+        $client = $this->getClient('hotel_search_result', false, true);
+        $this->service->setClient($client->reveal());
+        $this->service->setMarker('123');
+        $data = $this->service->getSearchResults('863394');
+        $this->assertCount(2, $data);
+        $this->assertArrayHasKey('result', $data);
+        $this->assertCount(10, $data['result']);
+        $this->assertArrayHasKey('status', $data);
+        $this->assertSame('ok', $data['status']);
     }
 
     protected function setUp(): void

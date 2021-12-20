@@ -1,0 +1,2299 @@
+{
+  "status": "ok",
+  "result": [
+    {
+      "maxPrice": 3142,
+      "minPriceTotal": 2548,
+      "name": "Plaza Ifach",
+      "price": 116,
+      "fullUrl": "http://search.hotellook.com/?hotelId=1769454812&marker=78606&language=en",
+      "distance": 0.2,
+      "url": "/search/?hotelId=1769454812&marker=78606",
+      "popularity": 2000,
+      "photoCount": 50,
+      "stars": 3,
+      "address": "C Isaac Peral, 2 es.1 Bj 01, Kalʹpe",
+      "rating": 0,
+      "amenities": [
+        4
+      ],
+      "guestScore": 0,
+      "photosByRoomType": {},
+      "maxPricePerNight": 143,
+      "id": 1769454812,
+      "rooms": [
+        {
+          "desc": "Standard Quadruple room (2 bunk beds)",
+          "price": 116,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1769454812&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "cardRequired": true
+          },
+          "total": 2548,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1769454812&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Quadruple room (2 bunk beds)",
+          "price": 116,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1769454812&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 2548,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1769454812&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Quadruple Room",
+          "price": 143,
+          "agencyId": "103",
+          "internalTypeId": "13",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1769454812&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "available": 1,
+            "refundable": false
+          },
+          "total": 3142,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1769454812&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.04675,
+        "lat": 38.644199
+      }
+    },
+    {
+      "maxPrice": 4558,
+      "minPriceTotal": 2614,
+      "name": "Hotel Porto Calpe",
+      "price": 119,
+      "fullUrl": "http://search.hotellook.com/?hotelId=290333&marker=78606&language=en",
+      "distance": 2.3,
+      "url": "/search/?hotelId=290333&marker=78606",
+      "popularity": 513719,
+      "photoCount": 50,
+      "stars": 3,
+      "address": "Explanada del Puerto, 7",
+      "rating": 87,
+      "amenities": [
+        131,
+        56,
+        50,
+        9,
+        38,
+        14,
+        6,
+        40,
+        13,
+        44,
+        7,
+        4,
+        11,
+        3,
+        16,
+        2,
+        134,
+        136,
+        137,
+        139,
+        143
+      ],
+      "guestScore": 87,
+      "photosByRoomType": {
+        "1": 17,
+        "2": 12,
+        "3": 6,
+        "35": 6
+      },
+      "maxPricePerNight": 207,
+      "id": 290333,
+      "rooms": [
+        {
+          "desc": "Standard Twin room (2 twin beds) (bed type is subject to availability, child bed not included)",
+          "price": 119,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "twin": 1
+            },
+            "deposit": false,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 2614,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (bed type is subject to availability, child bed not included)",
+          "price": 119,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": false,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 2614,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Twin room (2 twin beds) (bed type is subject to availability, child bed not included)",
+          "price": 119,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "twin": 1
+            },
+            "deposit": true,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 2614,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (bed type is subject to availability, child bed not included)",
+          "price": 119,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 2614,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double or Twin Room",
+          "price": 119,
+          "agencyId": "103",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "beds": {
+              "double": 1,
+              "twin": 1
+            },
+            "refundable": true
+          },
+          "total": 2614,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (child bed included)",
+          "price": 129,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 2834,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Or Twin Capacity 3",
+          "price": 130,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "beds": {
+              "double": 1,
+              "twin": 1
+            },
+            "refundable": true
+          },
+          "total": 2852,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (child bed not included)",
+          "price": 138,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=5&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 3025,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=5&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (child bed included)",
+          "price": 146,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=6&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 3216,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=6&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Twin room (2 twin beds) (bed type is subject to availability, child bed not included)",
+          "price": 150,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=7&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "twin": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 3296,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=7&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (bed type is subject to availability, child bed not included)",
+          "price": 150,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=8&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 3296,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=8&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Twin room (2 twin beds) (bed type is subject to availability, child bed not included)",
+          "price": 150,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=9&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "twin": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 3296,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=9&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double or Twin Room",
+          "price": 150,
+          "agencyId": "103",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "beds": {
+              "double": 1,
+              "twin": 1
+            },
+            "refundable": true
+          },
+          "total": 3296,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Triple room (bed type is subject to availability, child bed not included)",
+          "price": 160,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=10&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 3529,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=10&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Triple room (bed type is subject to availability, child bed not included)",
+          "price": 160,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=11&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 3529,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=11&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Triple Room",
+          "price": 160,
+          "agencyId": "103",
+          "internalTypeId": "3",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "refundable": true
+          },
+          "total": 3529,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Accomodation",
+          "price": 167,
+          "agencyId": "105",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=105&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "smoking": false,
+            "refundable": false
+          },
+          "total": 3666,
+          "agencyName": "Snaptravel",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=105&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (child bed not included)",
+          "price": 167,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=12&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": true,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 3671,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=12&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (child bed included)",
+          "price": 177,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=13&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": true,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 3887,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=13&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (child bed not included)",
+          "price": 195,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=14&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": true,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 4300,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=14&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Triple room (bed type is subject to availability, child bed not included)",
+          "price": 205,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=15&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 4508,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=15&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Triple room (bed type is subject to availability, child bed not included)",
+          "price": 205,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=16&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 4508,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=16&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double room (double bed) (child bed included)",
+          "price": 207,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=17&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": true,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 4558,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=17&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290333&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.07015,
+        "lat": 38.64004
+      }
+    },
+    {
+      "maxPrice": 2706,
+      "minPriceTotal": 2706,
+      "name": "Villa Romeo",
+      "price": 123,
+      "fullUrl": "http://search.hotellook.com/?hotelId=45690205&marker=78606&language=en",
+      "distance": 1.4,
+      "url": "/search/?hotelId=45690205&marker=78606",
+      "popularity": 2000,
+      "photoCount": 50,
+      "stars": 0,
+      "address": "La Canuta 2F",
+      "rating": 0,
+      "amenities": [
+        56,
+        38,
+        4,
+        11,
+        136,
+        139
+      ],
+      "guestScore": 0,
+      "photosByRoomType": {
+        "8": 37
+      },
+      "maxPricePerNight": 123,
+      "id": 45690205,
+      "rooms": [
+        {
+          "desc": "Twin Apartment (2 twin beds) (2 double beds, + sofa, 2 rooms)",
+          "price": 123,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=45690205&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "twin": 1
+            },
+            "deposit": false,
+            "cardRequired": true
+          },
+          "total": 2706,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=45690205&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (2 double beds, + sofa, 2 rooms)",
+          "price": 123,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=45690205&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "twin": 1
+            },
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 2706,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=45690205&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.03019,
+        "lat": 38.6399
+      }
+    },
+    {
+      "maxPrice": 2882,
+      "minPriceTotal": 2882,
+      "name": "Stefano",
+      "price": 131,
+      "fullUrl": "http://search.hotellook.com/?hotelId=1900185797&marker=78606&language=en",
+      "distance": 0.6,
+      "url": "/search/?hotelId=1900185797&marker=78606",
+      "popularity": 2000,
+      "photoCount": 40,
+      "stars": 0,
+      "address": "calle Santa Maria nº4, 1º, pta.1 nº 4, planta 1º, puerta 1",
+      "rating": 0,
+      "amenities": [],
+      "guestScore": 0,
+      "photosByRoomType": {
+        "8": 30
+      },
+      "maxPricePerNight": 131,
+      "id": 1900185797,
+      "rooms": [
+        {
+          "desc": "Double Apartment (double bed) (+ sofa, 1 bedroom)",
+          "price": 131,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900185797&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 2882,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900185797&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.05046,
+        "lat": 38.64285
+      }
+    },
+    {
+      "maxPrice": 4050,
+      "minPriceTotal": 2951,
+      "name": "Port Europa",
+      "price": 134,
+      "fullUrl": "http://search.hotellook.com/?hotelId=290348&marker=78606&language=en",
+      "distance": 1.6,
+      "url": "/search/?hotelId=290348&marker=78606",
+      "popularity": 381458,
+      "photoCount": 50,
+      "stars": 3,
+      "address": "Avenida Europa, 21",
+      "rating": 82,
+      "amenities": [
+        131,
+        56,
+        50,
+        9,
+        38,
+        14,
+        28,
+        13,
+        44,
+        102,
+        4,
+        11,
+        3,
+        2,
+        134,
+        136,
+        139,
+        141
+      ],
+      "guestScore": 82,
+      "photosByRoomType": {
+        "1": 2,
+        "8": 7
+      },
+      "maxPricePerNight": 184,
+      "id": 290348,
+      "rooms": [
+        {
+          "desc": "Standard Room",
+          "price": 134,
+          "agencyId": "101",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=101&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "allInclusive": false,
+            "breakfast": true,
+            "cardRequired": true,
+            "smoking": false,
+            "refundable": true,
+            "halfBoard": false
+          },
+          "total": 2951,
+          "agencyName": "Trip.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=101&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (1 bedroom, + sofa,lake view)",
+          "price": 142,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "view": "Lake",
+            "beds": {
+              "twin": 1
+            },
+            "cardRequired": true,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "balcony": true
+          },
+          "total": 3117,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (+ sofa, 1 bedroom,lake view)",
+          "price": 142,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "view": "Lake",
+            "beds": {
+              "twin": 1
+            },
+            "cardRequired": true,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "balcony": true
+          },
+          "total": 3117,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Apartment, 1 Bedroom,Lake View (2 Adults + 1 Child)",
+          "price": 142,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "view": "Lake",
+            "available": 3,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "balcony": true
+          },
+          "total": 3117,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "One Bedroom Apartment",
+          "price": 149,
+          "agencyId": "101",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=101&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "allInclusive": false,
+            "breakfast": true,
+            "cardRequired": true,
+            "smoking": false,
+            "refundable": true,
+            "halfBoard": false
+          },
+          "total": 3275,
+          "agencyName": "Trip.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=101&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "1 Bedroom Apartment (2Ad+1Ch)",
+          "price": 151,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "refundable": true
+          },
+          "total": 3316,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Apartment 1 Bedroom",
+          "price": 151,
+          "agencyId": "103",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "refundable": true
+          },
+          "total": 3322,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (+ sofa, 1 bedroom,sea view)",
+          "price": 152,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "view": "Sea",
+            "beds": {
+              "double": 1
+            },
+            "cardRequired": true,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "balcony": true
+          },
+          "total": 3355,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (+ sofa, 1 bedroom,sea view)",
+          "price": 152,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "view": "Sea",
+            "beds": {
+              "double": 1
+            },
+            "cardRequired": true,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "balcony": true
+          },
+          "total": 3355,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Apartment, 1 Bedroom,Sea View (2 Adults + 1 Child)",
+          "price": 152,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "view": "Sea",
+            "available": 2,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "balcony": true
+          },
+          "total": 3355,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (1 bedroom, + sofa,lake view)",
+          "price": 155,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Lake",
+            "allInclusive": false,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": true,
+            "beds": {
+              "twin": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3402,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (1 bedroom, + sofa,lake view)",
+          "price": 155,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=5&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Lake",
+            "allInclusive": false,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": true,
+            "beds": {
+              "twin": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3402,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=5&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, child bed included)",
+          "price": 156,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=6&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 3423,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=6&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "One Bedroom Apartment with Sea View",
+          "price": 158,
+          "agencyId": "101",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=101&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Sea",
+            "allInclusive": false,
+            "breakfast": true,
+            "cardRequired": true,
+            "smoking": false,
+            "refundable": true,
+            "viewSentence": "Sea View"
+          },
+          "total": 3481,
+          "agencyName": "Trip.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=101&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, child bed included, sea view)",
+          "price": 165,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=7&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Sea",
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 3637,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=7&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, + sofa,sea view)",
+          "price": 165,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=8&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Sea",
+            "allInclusive": false,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": true,
+            "beds": {
+              "double": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3640,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=8&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, + sofa,sea view)",
+          "price": 165,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=9&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Sea",
+            "allInclusive": false,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": true,
+            "beds": {
+              "double": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3640,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=9&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (+ sofa, 1 bedroom,lake view)",
+          "price": 168,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=10&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": true,
+            "ultraAllInclusive": false,
+            "view": "Lake",
+            "allInclusive": false,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": false,
+            "beds": {
+              "twin": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3695,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=10&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (1 bedroom, + sofa,lake view)",
+          "price": 168,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=11&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": true,
+            "ultraAllInclusive": false,
+            "view": "Lake",
+            "allInclusive": false,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": false,
+            "beds": {
+              "twin": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3695,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=11&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, child bed included)",
+          "price": 170,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=12&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": true,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 3732,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=12&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, + sofa,sea view)",
+          "price": 170,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=13&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": true,
+            "ultraAllInclusive": false,
+            "view": "Sea",
+            "allInclusive": false,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": false,
+            "beds": {
+              "double": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3735,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=13&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (+ sofa, 1 bedroom,sea view)",
+          "price": 170,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=14&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": true,
+            "ultraAllInclusive": false,
+            "view": "Sea",
+            "allInclusive": false,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": false,
+            "beds": {
+              "double": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3735,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=14&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, child bed included)",
+          "price": 174,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=15&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": true,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 3835,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=15&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (1 bedroom, + sofa,lake view)",
+          "price": 176,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=16&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Lake",
+            "allInclusive": true,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": false,
+            "beds": {
+              "twin": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3877,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=16&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Twin Apartment (2 twin beds) (+ sofa, 1 bedroom,lake view)",
+          "price": 176,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=17&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Lake",
+            "allInclusive": true,
+            "viewSentence": "Lake View",
+            "refundable": true,
+            "breakfast": false,
+            "halfBoard": false,
+            "beds": {
+              "twin": 1
+            },
+            "cardRequired": true,
+            "balcony": true
+          },
+          "total": 3878,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=17&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, child bed included, sea view)",
+          "price": 179,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=18&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "halfBoard": true,
+            "ultraAllInclusive": false,
+            "view": "Sea",
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 3946,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=18&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Double Apartment (double bed) (1 bedroom, child bed included, sea view)",
+          "price": 184,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=19&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": true,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "view": "Sea",
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "viewSentence": "Sea View",
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 4050,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=19&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290348&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.06255,
+        "lat": 38.64204
+      }
+    },
+    {
+      "maxPrice": 3455,
+      "minPriceTotal": 3023,
+      "name": "HOSTEL SEA & DREAMS CALPE",
+      "price": 137,
+      "fullUrl": "http://search.hotellook.com/?hotelId=1900924542&marker=78606&language=en",
+      "distance": 0.1,
+      "url": "/search/?hotelId=1900924542&marker=78606",
+      "popularity": 2000,
+      "photoCount": 50,
+      "stars": 0,
+      "address": "24 Carrer Major",
+      "rating": 0,
+      "amenities": [
+        56,
+        13,
+        4
+      ],
+      "guestScore": 0,
+      "photosByRoomType": {
+        "1": 8,
+        "2": 5,
+        "4": 3,
+        "7": 4,
+        "9": 4,
+        "12": 8,
+        "31": 5
+      },
+      "maxPricePerNight": 157,
+      "id": 1900924542,
+      "rooms": [
+        {
+          "desc": "Superior Double Room, Multiple Beds, Ensuite",
+          "price": 137,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "beds": {
+              "double": 1
+            },
+            "available": 2,
+            "refundable": false
+          },
+          "total": 3023,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Family Room, Multiple Beds, Ensuite (6)",
+          "price": 143,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "available": 1,
+            "refundable": false
+          },
+          "total": 3140,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Superior Double room (bunk bed)",
+          "price": 144,
+          "agencyId": "67",
+          "internalTypeId": "2",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": false,
+            "cardRequired": true
+          },
+          "total": 3170,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Superior Double room (bunk bed)",
+          "price": 144,
+          "agencyId": "67",
+          "internalTypeId": "2",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 3170,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Superior Double Room, Multiple Beds, Ensuite",
+          "price": 145,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "beds": {
+              "double": 1
+            },
+            "available": 2,
+            "refundable": true
+          },
+          "total": 3189,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Family room (bunk bed)",
+          "price": 150,
+          "agencyId": "67",
+          "internalTypeId": "12",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 3294,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Family room (bunk bed)",
+          "price": 150,
+          "agencyId": "67",
+          "internalTypeId": "12",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": false,
+            "cardRequired": true
+          },
+          "total": 3294,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Family Room, Multiple Beds, Ensuite (6)",
+          "price": 150,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "available": 1,
+            "refundable": true
+          },
+          "total": 3294,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Superior Double room (bunk bed)",
+          "price": 152,
+          "agencyId": "67",
+          "internalTypeId": "2",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": false,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 3345,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Superior Double room (bunk bed)",
+          "price": 152,
+          "agencyId": "67",
+          "internalTypeId": "2",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=5&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 3345,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=5&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Family room (bunk bed)",
+          "price": 157,
+          "agencyId": "67",
+          "internalTypeId": "12",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=6&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 3455,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=6&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Family room (bunk bed)",
+          "price": 157,
+          "agencyId": "67",
+          "internalTypeId": "12",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=7&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": false,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 3455,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=7&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1900924542&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.04387,
+        "lat": 38.64484
+      }
+    },
+    {
+      "maxPrice": 3049,
+      "minPriceTotal": 3049,
+      "name": "Atlanta14",
+      "price": 139,
+      "fullUrl": "http://search.hotellook.com/?hotelId=1863299063&marker=78606&language=en",
+      "distance": 1.7,
+      "url": "/search/?hotelId=1863299063&marker=78606",
+      "popularity": 2000,
+      "photoCount": 48,
+      "stars": 0,
+      "address": "Calle Luxemburgo 2, 14o, 09 ed. Atlantico",
+      "rating": 0,
+      "amenities": [],
+      "guestScore": 0,
+      "photosByRoomType": {
+        "8": 38
+      },
+      "maxPricePerNight": 139,
+      "id": 1863299063,
+      "rooms": [
+        {
+          "desc": "Double Apartment (double bed) (+ sofa, 1 bedroom)",
+          "price": 139,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1863299063&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 3049,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1863299063&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.06352,
+        "lat": 38.64218
+      }
+    },
+    {
+      "maxPrice": 3077,
+      "minPriceTotal": 3077,
+      "name": "Apartamento Apolo 8 Costa Calpe",
+      "price": 140,
+      "fullUrl": "http://search.hotellook.com/?hotelId=1326181437&marker=78606&language=en",
+      "distance": 0.4,
+      "url": "/search/?hotelId=1326181437&marker=78606",
+      "popularity": 2000,
+      "photoCount": 34,
+      "stars": 0,
+      "address": "C/ Maestro Serrano 6, Kalʹpe",
+      "rating": 0,
+      "amenities": [
+        11
+      ],
+      "guestScore": 0,
+      "photosByRoomType": {},
+      "maxPricePerNight": 140,
+      "id": 1326181437,
+      "rooms": [
+        {
+          "desc": "Double Apartment (double bed) (bed type is subject to availability, + sofa, 1 bedroom, beachfront)",
+          "price": 140,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1326181437&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 3077,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1326181437&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Apartment (bed type is subject to availability, 1 bedroom, child bed not included, beachfront)",
+          "price": 140,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1326181437&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 3077,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=1326181437&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Apartment, 1 Bedroom, Beachside",
+          "price": 140,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1326181437&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "available": 1,
+            "refundable": false
+          },
+          "total": 3077,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=1326181437&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.04859,
+        "lat": 38.64423
+      }
+    },
+    {
+      "maxPrice": 4170,
+      "minPriceTotal": 3140,
+      "name": "Apartamentos Esmeralda Unitursa",
+      "price": 143,
+      "fullUrl": "http://search.hotellook.com/?hotelId=290375&marker=78606&language=en",
+      "distance": 2.7,
+      "url": "/search/?hotelId=290375&marker=78606",
+      "popularity": 81855,
+      "photoCount": 35,
+      "stars": 0,
+      "address": "Ponent, 1",
+      "rating": 75,
+      "amenities": [
+        131,
+        56,
+        38,
+        14,
+        11,
+        136,
+        137,
+        139
+      ],
+      "guestScore": 75,
+      "photosByRoomType": {
+        "8": 19
+      },
+      "maxPricePerNight": 190,
+      "id": 290375,
+      "rooms": [
+        {
+          "desc": "Standard Double Apartment (double bed) (+ sofa, 1 bedroom)",
+          "price": 143,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290375&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": false,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 3140,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290375&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Apartment (double bed) (+ sofa, 1 bedroom)",
+          "price": 143,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290375&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 3140,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290375&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Apartment (double bed) (+ sofa, 2 rooms)",
+          "price": 190,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290375&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": false,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 4170,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290375&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Apartment (double bed) (+ sofa, 2 rooms)",
+          "price": 190,
+          "agencyId": "67",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290375&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "beds": {
+              "double": 1
+            },
+            "deposit": true,
+            "cardRequired": true,
+            "refundable": true
+          },
+          "total": 4170,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290375&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.07505,
+        "lat": 38.64904
+      }
+    },
+    {
+      "maxPrice": 7252,
+      "minPriceTotal": 3140,
+      "name": "AR Roca Esmeralda & Spa Hotel",
+      "price": 143,
+      "fullUrl": "http://search.hotellook.com/?hotelId=290339&marker=78606&language=en",
+      "distance": 2.7,
+      "url": "/search/?hotelId=290339&marker=78606",
+      "popularity": 2000,
+      "photoCount": 50,
+      "stars": 3,
+      "address": "Ponent,1",
+      "rating": 0,
+      "amenities": [
+        131,
+        56,
+        50,
+        29,
+        9,
+        38,
+        14,
+        6,
+        40,
+        65,
+        13,
+        102,
+        26,
+        4,
+        11,
+        3,
+        16,
+        2,
+        136,
+        137,
+        139
+      ],
+      "guestScore": 0,
+      "photosByRoomType": {
+        "1": 6,
+        "2": 2,
+        "13": 3
+      },
+      "maxPricePerNight": 330,
+      "id": 290339,
+      "rooms": [
+        {
+          "desc": "Standard Apartment, 1 Bedroom",
+          "price": 143,
+          "agencyId": "103",
+          "internalTypeId": "8",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "refundable": true
+          },
+          "total": 3140,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Apartment, 1 Bedroom (Class 1)",
+          "price": 158,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "refundable": true
+          },
+          "total": 3470,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Apartment, 2 Bedrooms (Promo)",
+          "price": 190,
+          "agencyId": "103",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "refundable": true
+          },
+          "total": 4170,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Triple Room",
+          "price": 200,
+          "agencyId": "103",
+          "internalTypeId": "3",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "refundable": true
+          },
+          "total": 4394,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Triple room",
+          "price": 223,
+          "agencyId": "67",
+          "internalTypeId": "3",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 4911,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Accomodation",
+          "price": 226,
+          "agencyId": "105",
+          "internalTypeId": null,
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=105&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "smoking": false,
+            "refundable": false
+          },
+          "total": 4971,
+          "agencyName": "Snaptravel",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=105&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Family Room",
+          "price": 240,
+          "agencyId": "103",
+          "internalTypeId": "12",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "refundable": true
+          },
+          "total": 5273,
+          "agencyName": "Hotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=103&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Triple room",
+          "price": 245,
+          "agencyId": "67",
+          "internalTypeId": "3",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "halfBoard": true,
+            "ultraAllInclusive": false,
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 5385,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=1&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Family room (double bed)",
+          "price": 268,
+          "agencyId": "67",
+          "internalTypeId": "12",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": true
+          },
+          "total": 5893,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=2&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Triple room",
+          "price": 272,
+          "agencyId": "67",
+          "internalTypeId": "3",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": true,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 5995,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=3&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Family room (double bed)",
+          "price": 294,
+          "agencyId": "67",
+          "internalTypeId": "12",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": false,
+            "halfBoard": true,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 6462,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=4&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Guest Room",
+          "price": 323,
+          "agencyId": "101",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=101&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "fullBoard": false,
+            "ultraAllInclusive": false,
+            "allInclusive": false,
+            "breakfast": true,
+            "cardRequired": true,
+            "smoking": false,
+            "refundable": true,
+            "halfBoard": false
+          },
+          "total": 7114,
+          "agencyName": "Trip.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=0&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=101&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard Double Family room (double bed)",
+          "price": 327,
+          "agencyId": "67",
+          "internalTypeId": "12",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=5&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": false,
+            "fullBoard": true,
+            "halfBoard": false,
+            "ultraAllInclusive": false,
+            "beds": {
+              "double": 1
+            },
+            "allInclusive": false,
+            "cardRequired": true,
+            "refundable": true,
+            "breakfast": false
+          },
+          "total": 7194,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=5&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR"
+        },
+        {
+          "desc": "Standard room",
+          "price": 330,
+          "agencyId": "67",
+          "internalTypeId": "1",
+          "type": "",
+          "bookingURL": "/r/?adults=2&checkOut=2020-08-23&roomId=6&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR",
+          "tax": 0,
+          "options": {
+            "deposit": true,
+            "cardRequired": true
+          },
+          "total": 7252,
+          "agencyName": "ZenHotels.com",
+          "fullBookingURL": "http://search.hotellook.com/r?adults=2&checkOut=2020-08-23&roomId=6&children=5&checkIn=2020-08-01&affSearchId=863394&host=v2%3A78606&flag_traffic=affiliate_api&marker=78606&searchUuid=857cefab-b5b7-4a02-bdf6-3e99857af09a&transparent=1&language=en&gateId=67&hotelId=290339&locationId=3288&currency=EUR"
+        }
+      ],
+      "location": {
+        "lon": 0.07491,
+        "lat": 38.6497
+      }
+    }
+  ]
+}

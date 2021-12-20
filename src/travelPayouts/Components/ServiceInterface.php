@@ -11,6 +11,7 @@ interface ServiceInterface
     public const DATA_SERVICE = 'DataService';
     public const FLIGHT_SERVICE = 'FlightService';
     public const TICKETS_SERVICE = 'TicketsService';
+    public const PARTNER_SERVICE = 'PartnerService';
     public const HOTEL_SERVICE = 'HotelService';
     public const HOTEL_SEARCH_SERVICE = 'HotelSearchService';
 

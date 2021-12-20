@@ -9,6 +9,7 @@ use TravelPayouts\Services\DataService;
 use TravelPayouts\Services\FlightService;
 use TravelPayouts\Services\HotelSearchService;
 use TravelPayouts\Services\HotelService;
+use TravelPayouts\Services\PartnerService;
 use TravelPayouts\Services\TicketsService;
 
 class Services
@@ -20,6 +21,7 @@ class Services
             ServiceInterface::DATA_SERVICE => DataService::class,
             ServiceInterface::FLIGHT_SERVICE => FlightService::class,
             ServiceInterface::TICKETS_SERVICE => TicketsService::class,
+            ServiceInterface::PARTNER_SERVICE => PartnerService::class,
             ServiceInterface::HOTEL_SERVICE => HotelService::class,
             ServiceInterface::HOTEL_SEARCH_SERVICE => HotelSearchService::class,
         ];

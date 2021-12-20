@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TravelPayouts\Services;
 
 use Exception;
+use RuntimeException;
 use TravelPayouts\Components\HotelClient;
 use TravelPayouts\Components\ServiceInterface;
 use TravelPayouts\Enums\EnumSortAsc;
@@ -18,11 +19,11 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
 
     private string $ip;
 
-    private int $cityId;
+    private ?int $cityId = null;
 
-    private int $hotelId;
+    private ?int $hotelId = null;
 
-    private string $iata;
+    private ?string $iata = null;
 
     private string $checkIn;
 
@@ -42,12 +43,18 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
 
     private string $customerIP;
 
-    private string $host;
+    private ?string $host;
 
-    public function search(string $locale = 'en_US', string $currency = 'EUR')
+    public function search(string $locale = 'en', string $currency = 'EUR', int $waitForResults = 0)
     {
         $url = 'search/start';
         $locale = in_array($locale, ['en', 'ru', 'de', 'fr', 'it', 'pl', 'th'], true) ? $locale : 'en';
+        if ($this->getIata() === null && $this->getCityId() === null && $this->getHotelId() === null) {
+            throw new RuntimeException('cityId, hotelId or iata should not be null');
+        }
+        if ($this->getChildrenCount() > 3) {
+            throw new RuntimeException('no more then 3 children allowed');
+        }
 
         $options = [
             'marker' => $this->getMarker(),
@@ -55,20 +62,34 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
             'checkIn' => $this->getCheckIn(),
             'checkOut' => $this->getCheckOut(),
             'childrenCount' => $this->getChildrenCount(),
-            'childAge1' => $this->getChildrenCount() > 0 ? $this->getChildAge1() : 0,
-            'childAge2' => $this->getChildrenCount() > 1 ? $this->getChildAge2() : 0,
-            'childAge3' => $this->getChildrenCount() > 2 ? $this->getChildAge3() : 0,
             'currency' => $currency,
             'customerIP' => $this->getCustomerIP(),
-            'iata' => $this->getIata(),
             'lang' => $locale,
             'timeout' => $this->getTimeout(),
-            'waitForResults' => '1',
+            'waitForResults' => $waitForResults,
         ];
+        if ($this->getIata() !== null) {
+            $options['iata'] = $this->getIata();
+        }
+        if ($this->getCityId() !== null) {
+            $options['cityId'] = $this->getCityId();
+        }
+        if ($this->getHotelId() !== null) {
+            $options['hotelId'] = $this->getHotelId();
+        }
+        if ($this->getChildrenCount() >= 1) {
+            $options['childAge1'] = $this->getChildAge1();
+        }
+        if ($this->getChildrenCount() >= 2) {
+            $options['childAge2'] = $this->getChildAge2();
+        }
+        if ($this->getChildrenCount() === 3) {
+            $options['childAge3'] = $this->getChildAge3();
+        }
 
         $options['signature'] = $this->getSignature($options);
 
-        return $this->client->execute($url, $options, 'GET', false);
+        return $this->client->execute($url, $options, 'GET', true);
     }
 
     public function getSearchResults(
@@ -93,12 +114,14 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
 
         $options['signature'] = $this->getSignature($options);
 
-        return $this->client->setApiVersion('v1')->execute($url, $options);
+        $this->client->setApiVersion('v1');
+        return $this->client->execute($url, $options);
     }
 
     public function getSignature(array $options): string
     {
         unset($options['marker']);
+        unset($options['timeout']);
         ksort($options);
         $signatureString = sprintf('%s:%s', $this->client->getToken(), $this->getMarker());
         $signatureString = sprintf('%s:%s', $signatureString, implode(':', $options));
@@ -208,12 +231,12 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
         return $this;
     }
 
-    public function getIata(): string
+    public function getIata(): ?string
     {
         return $this->iata;
     }
 
-    public function setIata(string $iata): self
+    public function setIata(?string $iata): self
     {
         $this->iata = $iata;
 
@@ -248,12 +271,12 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
         return $this;
     }
 
-    public function getHost(): string
+    public function getHost(): ?string
     {
         return $this->host;
     }
 
-    public function setHost(string $host): self
+    public function setHost(?string $host): self
     {
         $this->host = $host;
 
@@ -272,24 +295,24 @@ class HotelSearchService extends AbstractService implements ServiceInterface, Ho
         return $this;
     }
 
-    public function getCityId(): int
+    public function getCityId(): ?int
     {
         return $this->cityId;
     }
 
-    public function setCityId(int $cityId): self
+    public function setCityId(?int $cityId): self
     {
         $this->cityId = $cityId;
 
         return $this;
     }
 
-    public function getHotelId(): int
+    public function getHotelId(): ?int
     {
         return $this->hotelId;
     }
 
-    public function setHotelId(int $hotelId): self
+    public function setHotelId(?int $hotelId): self
     {
         $this->hotelId = $hotelId;
 
