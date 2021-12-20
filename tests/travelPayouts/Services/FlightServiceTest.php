@@ -41,7 +41,7 @@ class FlightServiceTest extends TestCase
         $client = $this->getClient('flight_search_results', true);
         $this->service->setClient($client->reveal());
         $data = $this->service->getSearchResults('076efe05-eeda-4c30-8e9a-1c36ec565916');
-        $this->assertCount(50, $data);
+        $this->assertCount(1, $data);
         $this->assertArrayHasKey('proposals', $data[0]);
         $this->assertArrayHasKey('airports', $data[0]);
         $this->assertArrayHasKey('airlines', $data[0]);

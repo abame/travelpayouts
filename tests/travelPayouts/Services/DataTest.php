@@ -32,10 +32,10 @@ class DataTest extends TestCase
 
     public function testGetCity(): void
     {
-        $code = 'NYC';
-        $name = 'New York';
-        $coordinates = ['lat' => 40.71435, 'lon' => -74.005974];
-        $timeZone = 'America/New_York';
+        $code = 'UGO';
+        $name = 'Uige';
+        $coordinates = ['lat' => -7.816667, 'lon' => 15.15];
+        $timeZone = 'Africa/Luanda';
 
         $client = $this->getClient('cities', true);
         $this->service->setClient($client->reveal());
