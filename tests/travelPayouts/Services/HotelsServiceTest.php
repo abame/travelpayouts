@@ -61,7 +61,7 @@ class HotelsServiceTest extends TestCase
 
     public function testGetCostOfLiving(): void
     {
-        $client = $this->getClient('living_cost', false, true);
+        $client = $this->getClient('hotels/living_cost', false, true);
         $this->service->setClient($client->reveal());
         $today = new DateTime('now');
         $tomorrow = clone $today;

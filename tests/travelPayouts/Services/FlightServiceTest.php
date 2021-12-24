@@ -22,7 +22,7 @@ class FlightServiceTest extends TestCase
 
     public function testSearch(): void
     {
-        $client = $this->getClient('flight_search', true, false, true);
+        $client = $this->getClient('flight/flight_search', true, false, true);
         $this->service->setMarker('1234')
         ->setHost('dummy_host')
         ->setIp('1234')
@@ -38,7 +38,7 @@ class FlightServiceTest extends TestCase
 
     public function testGetSearchResults(): void
     {
-        $client = $this->getClient('flight_search_results', true);
+        $client = $this->getClient('flight/flight_search_results', true);
         $this->service->setClient($client->reveal());
         $data = $this->service->getSearchResults('076efe05-eeda-4c30-8e9a-1c36ec565916');
         $this->assertCount(1, $data);

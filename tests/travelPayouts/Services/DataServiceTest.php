@@ -13,7 +13,7 @@ use TravelPayouts\Entity\Country;
 use TravelPayouts\Services\DataService;
 use TravelPayouts\Services\DataServiceInterface;
 
-class DataTest extends TestCase
+class DataServiceTest extends TestCase
 {
     use ProphecyTrait;
     use BaseServiceTrait;
@@ -37,7 +37,7 @@ class DataTest extends TestCase
         $coordinates = ['lat' => -7.816667, 'lon' => 15.15];
         $timeZone = 'Africa/Luanda';
 
-        $client = $this->getClient('cities', true);
+        $client = $this->getClient('data/cities', true);
         $this->service->setClient($client->reveal());
         $city = $this->service->getCity($code);
 
@@ -55,7 +55,7 @@ class DataTest extends TestCase
         $name = 'United States';
         $currency = 'USD';
 
-        $client = $this->getClient('countries', true);
+        $client = $this->getClient('data/countries', true);
         $this->service->setClient($client->reveal());
         $country = $this->service->getCountry($code);
 
@@ -72,7 +72,7 @@ class DataTest extends TestCase
         $coordinates = ['lat' => -7.2, 'lon' => -39.316666];
         $timeZone = 'America/Fortaleza';
 
-        $client = $this->getClient('airports', true);
+        $client = $this->getClient('data/airports', true);
         $this->service->setClient($client->reveal());
         $airport = $this->service->getAirport($code);
 
@@ -86,7 +86,7 @@ class DataTest extends TestCase
 
     public function testGetAirlines(): void
     {
-        $client = $this->getClient('airlines', true);
+        $client = $this->getClient('data/airlines', true);
         $this->service->setClient($client->reveal());
         $json = $this->service->getAirlines();
 
@@ -97,7 +97,7 @@ class DataTest extends TestCase
 
     public function testGetAirlinesAlliances(): void
     {
-        $client = $this->getClient('airlines_alliances', true);
+        $client = $this->getClient('data/airlines_alliances', true);
         $this->service->setClient($client->reveal());
         $data = $this->service->getAirlinesAlliances();
         $this->assertIsArray($data);
@@ -107,7 +107,7 @@ class DataTest extends TestCase
 
     public function testGetPlanes(): void
     {
-        $client = $this->getClient('planes', true);
+        $client = $this->getClient('data/planes', true);
         $this->service->setClient($client->reveal());
         $json = $this->service->getPlanes();
 
@@ -121,7 +121,7 @@ class DataTest extends TestCase
 
     public function testGetRoutes(): void
     {
-        $client = $this->getClient('routes', true);
+        $client = $this->getClient('data/routes', true);
         $this->service->setClient($client->reveal());
         $json = $this->service->getRoutes();
 

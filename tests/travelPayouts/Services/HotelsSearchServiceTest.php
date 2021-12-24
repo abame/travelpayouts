@@ -44,7 +44,7 @@ class HotelsSearchServiceTest extends TestCase
 
     public function testSearch()
     {
-        $client = $this->getClient('hotels/search_id', false, true, true);
+        $client = $this->getClient('hotel_search/search_id', false, true, true);
         $client->getToken()->willReturn('DUMMY_TOKEN');
         $this->service->setClient($client->reveal());
 
@@ -67,7 +67,7 @@ class HotelsSearchServiceTest extends TestCase
 
     public function testGetSearchResults()
     {
-        $client = $this->getClient('hotels/search_result', false, true);
+        $client = $this->getClient('hotel_search/search_result', false, true);
         $this->service->setClient($client->reveal());
         $this->service->setMarker('123');
         $data = $this->service->getSearchResults('863394');

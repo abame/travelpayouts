@@ -52,25 +52,6 @@ class PartnerService extends AbstractService implements ServiceInterface, Partne
         return $response['data']['sales'];
     }
 
-    public function getDetailedSales(string $month = null, string $host = null, string $marker = null): array
-    {
-        $url = 'statistics/detailed-sales';
-
-        $date = new DateTime($month === null ? 'now' : $month);
-
-        $options = [
-            'group_by' => 'date_marker',
-            'month' => $date->modify('first day of this month')->setTime(0, 0)->format('Y-m-d'),
-            'host_filter' => $host,
-            'marker_filter' => $marker,
-        ];
-
-        /** @var array{success: bool, data: array{sales: array<string, mixed>}} $response */
-        $response = $this->getClient()->execute($url, $options);
-
-        return $response['data']['sales'];
-    }
-
     public function getClient()
     {
         return $this->client;

@@ -6,25 +6,33 @@ namespace Tests\TravelPayouts\Services;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use RuntimeException;
 use TravelPayouts\Services\PartnerService;
 use TravelPayouts\Travel;
 
 class PartnerServiceTest extends TestCase
 {
+    use BaseServiceTrait;
+    use ProphecyTrait;
+
     protected PartnerService $service;
 
     public function testGetBalance(): void
     {
-        $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('401:unknown');
-        $this->service->getBalance();
+        $client = $this->getClient('partner/balance', true);
+        $this->service->setClient($client->reveal());
+        $response = $this->service->getBalance();
+        $this->assertIsArray($response);
+        $this->assertArrayHasKey('balance', $response);
+        $this->assertArrayHasKey('currency', $response);
     }
 
     public function testGetPayments(): void
     {
+        $client = $this->getClient('partner/payments', true);
+        $this->service->setClient($client->reveal());
         /** no sales therefore runtime exception thrown */
-        $this->expectException(RuntimeException::class);
         $payments = $this->service->getPayments();
 
         foreach ($payments as $payment) {
@@ -34,11 +42,12 @@ class PartnerServiceTest extends TestCase
 
     public function testGetSales(): void
     {
+        $client = $this->getClient('partner/sales', true);
+        $this->service->setClient($client->reveal());
+
         $today = new DateTime('now');
         $date = new DateTime($today->format('Y-m'));
 
-        $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('401:unknown');
         $sales = $this->service->getSales('date', $date->format('Y-m'));
 
         $period = [
@@ -47,43 +56,13 @@ class PartnerServiceTest extends TestCase
         ];
 
         foreach ($sales as $sale) {
-            $this->assertEmpty($sale['key']);
+            $this->assertNotEmpty($sale['key']);
             self::assertLessThanOrEqual($period[0], strtotime($sale['key']));
             self::assertLessThanOrEqual($period[1], strtotime($sale['key']));
 
             $saleCount = 0;
 
             $saleCount += array_sum($sale['flights']) + array_sum($sale['hotels']);
-
-            self::assertGreaterThan(0, $saleCount);
-        }
-    }
-
-    public function testGetDetailedSales(): void
-    {
-        $today = new DateTime('now');
-        $date = new DateTime($today->format('Y-m'));
-
-        $this->expectException(RuntimeException::class);
-        $this->expectExceptionMessage('401:unknown');
-        $sales = $this->service->getDetailedSales($date->format('Y-m'));
-
-        $period = [
-            $date->getTimestamp(),
-            $date->modify('first day of next month')->getTimestamp(),
-        ];
-
-        foreach ($sales as $key => $sale) {
-            self::assertGreaterThanOrEqual($period[0], strtotime($key));
-            self::assertLessThanOrEqual($period[1], strtotime($key));
-
-            $saleCount = 0;
-
-            foreach ($sale as $types) {
-                foreach ($types as $type) {
-                    $saleCount += array_sum($type);
-                }
-            }
 
             self::assertGreaterThan(0, $saleCount);
         }

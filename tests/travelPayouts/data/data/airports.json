@@ -1,0 +1,23 @@
+[
+   {
+      "code":"JDO",
+      "name":"Regional Do Cariri",
+      "coordinates":{
+         "lon":-39.316666,
+         "lat":-7.2
+      },
+      "time_zone":"America/Fortaleza",
+      "name_translations":{
+         "de":"Juazeiro do Norte",
+         "en":"Regional Do Cariri",
+         "zh-CN":"北茹阿泽鲁机场",
+         "tr":null,
+         "it":"Regional Do Cariri",
+         "fr":"Regional Do Cariri",
+         "es":"Regional Do Cariri",
+         "th":"จัวซีรูดูนอร์ทิ / จัวเซโรโดนอร์ท"
+      },
+      "country_code":"BR",
+      "city_code":"JDO"
+   }
+]
