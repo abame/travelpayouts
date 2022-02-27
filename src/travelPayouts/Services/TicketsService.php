@@ -372,31 +372,38 @@ class TicketsService extends AbstractService implements ServiceInterface, Ticket
      */
     private function createTicketObject($origin, $destination, array $ticket, string $currency): Ticket
     {
+        $returnDate = isset($ticket['return_at']) ? (string)$ticket['return_at'] : (isset($ticket['return_date']) ? (string)$ticket['return_date'] : null);
         $ticketObject = (new Ticket())
             ->setValue(isset($ticket['price']) ? (int)$ticket['price'] : (int)$ticket['value'])
             ->setDestination($destination)
             ->setOrigin($origin)
             ->setAirline(isset($ticket['airline']) ? (string)$ticket['airline'] : '')
             ->setFlightNumber((int)($ticket['flight_number'] ?? 0))
-            ->setExpires(isset($ticket['expires_at']) ? new DateTime((string)$ticket['expires_at']) : null)
             ->setCurrency($currency)
             ->setActual(isset($ticket['actual']) && $ticket['actual'])
-            ->setDepartDate(new DateTime(isset($ticket['departure_at']) ? (string)$ticket['departure_at'] : (string)$ticket['depart_date']))
-            ->setFoundAt(new DateTime(isset($ticket['found_at']) ? (string)$ticket['found_at'] : 'now'))
-            ->setNumberOfChanges(isset($ticket['transfers']) ? (int)$ticket['transfers'] : (isset($ticket['number_of_changes']) ? (int)$ticket['number_of_changes'] : 0))
             ->setDistance(isset($ticket['distance']) ? (int)$ticket['distance'] : 0)
             ->setShowToAffiliates(!isset($ticket['show_to_affiliates']) || $ticket['show_to_affiliates'])
             ->setTripClass(isset($ticket['trip_class']) ? (int)$ticket['trip_class'] : self::ECONOMY_CLASS);
-        if (isset($ticket['return_at']) || isset($ticket['return_date'])) {
-            $date = isset($ticket['return_at']) ? (string)$ticket['return_at'] : null;
-            if ($date === null) {
-                $date = isset($ticket['return_date']) ? (string)$ticket['return_date'] : null;
-            }
-            if ($date !== null) {
-                $ticketObject->setReturnDate(new DateTime($date));
-            }
+        $this->optionalTicketData($ticketObject, $ticket);
+        if ($returnDate !== null) {
+            $ticketObject->setReturnDate(new DateTime($returnDate));
         }
         return $ticketObject;
+    }
+
+    /**
+     * @param Ticket $ticket
+     * @param array<string, int|string|bool> $ticketData
+     * @return void
+     * @throws Exception
+     */
+    private function optionalTicketData(Ticket $ticket, array $ticketData): void
+    {
+        $ticket
+            ->setDepartDate(new DateTime(isset($ticketData['departure_at']) ? (string)$ticketData['departure_at'] : (string)$ticketData['depart_date']))
+            ->setNumberOfChanges(isset($ticketData['transfers']) ? (int)$ticketData['transfers'] : (isset($ticketData['number_of_changes']) ? (int)$ticketData['number_of_changes'] : 0))
+            ->setExpires(isset($ticketData['expires_at']) ? new DateTime((string)$ticketData['expires_at']) : null)
+            ->setFoundAt(new DateTime(isset($ticketData['found_at']) ? (string)$ticketData['found_at'] : 'now'));
     }
 
     /**
