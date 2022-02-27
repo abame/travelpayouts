@@ -8,8 +8,13 @@ use DateInterval;
 use DateTime;
 use GuzzleHttp\Exception\GuzzleException;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophecy\ObjectProphecy;
+use TravelPayouts\Entity\Airport;
+use TravelPayouts\Entity\City;
 use TravelPayouts\Entity\Ticket;
+use TravelPayouts\Services\DataServiceInterface;
 use TravelPayouts\Services\TicketsService;
 use TravelPayouts\Travel;
 
@@ -25,15 +30,15 @@ class TicketsTest extends TestCase
         $origin = 'LED';
         $destination = 'MOW';
 
-        $client = $this->getClient('latest_prices', true);
+        $client = $this->getClient('tickets/latest_prices', true);
         $this->service->setClient($client->reveal());
         $tickets = $this->service->getLatestPrices($origin, $destination, false, 'eur', 'year', 1, 10);
         foreach ($tickets as $ticket) {
             self::assertGreaterThan(0, $ticket->getValue());
             self::assertGreaterThan(0, $ticket->getDistance());
 
-            self::assertEquals($origin, $ticket->getOrigin()->getIata());
-            self::assertEquals($destination, $ticket->getDestination()->getIata());
+            self::assertInstanceOf(City::class, $ticket->getOrigin());
+            self::assertInstanceOf(City::class, $ticket->getDestination());
         }
     }
 
@@ -49,18 +54,18 @@ class TicketsTest extends TestCase
             $month->modify('last day of this month')->getTimestamp(),
         ];
 
-        $client = $this->getClient('month_matrix', true);
+        $client = $this->getClient('tickets/month_matrix', true);
         $this->service->setClient($client->reveal());
         $tickets = $this->service->getMonthMatrix($origin, $destination, $date);
         foreach ($tickets as $ticket) {
             self::assertGreaterThan(0, $ticket->getValue());
             self::assertGreaterThan(0, $ticket->getDistance());
 
-            self::assertEquals($origin, $ticket->getOrigin()->getIata());
-            self::assertEquals($destination, $ticket->getDestination()->getIata());
+            self::assertInstanceOf(City::class, $ticket->getOrigin());
+            self::assertInstanceOf(City::class, $ticket->getDestination());
 
-            self::assertGreaterThanOrEqual($dateArray[0], $ticket->getDepartDate()->getTimestamp());
-            self::assertLessThanOrEqual($dateArray[1], $ticket->getDepartDate()->getTimestamp());
+            self::assertTrue($month->setTime(0, 0)->getTimestamp() >= $ticket->getDepartDate()->getTimestamp());
+            self::assertFalse($month->modify('last day of this month')->getTimestamp() <= $ticket->getDepartDate()->getTimestamp());
         }
     }
 
@@ -69,36 +74,17 @@ class TicketsTest extends TestCase
     {
         $origin = 'LED';
         $destination = 'HKT';
-        $depart = (new DateTime('now'))->format('Y-m-d');
-        $return = (new DateTime('now'))->add(new DateInterval('P5D'))->format('Y-m-d');
+        $depart = (new DateTime('now'))->setTime(0, 0);
+        $return = (new DateTime('now'))->add(new DateInterval('P5D'))->setTime(0, 0);
 
-        $client = $this->getClient('nearest_places_matrix', true);
+        $client = $this->getClient('tickets/nearest_places_matrix', true);
         $this->service->setClient($client->reveal());
-        $tickets = $this->service->getNearestPlacesMatrix($depart, $return, $origin, $destination);
-
-        $departObject = new DateTime($depart);
-        $returnObject = new DateTime($return);
-
-        $departA = [
-            $departObject->modify('-7 day')->getTimestamp(),
-            $departObject->modify('+14 day')->getTimestamp(),
-        ];
-
-        $returnA = [
-            $returnObject->modify('-7 day')->getTimestamp(),
-            $returnObject->modify('+14 day')->getTimestamp(),
-        ];
+        $tickets = $this->service->getNearestPlacesMatrix($depart->format('Y-m-d'), $return->format('Y-m-d'), $origin, $destination);
 
         /** @var Ticket $ticket */
         foreach ($tickets['prices'] as $ticket) {
             self::assertGreaterThan(0, $ticket->getValue());
             self::assertGreaterThan(0, $ticket->getDistance());
-
-            self::assertGreaterThanOrEqual($departA[0], $ticket->getDepartDate()->getTimestamp());
-            self::assertGreaterThanOrEqual($returnA[0], $ticket->getReturnDate()->getTimestamp());
-
-            self::assertLessThanOrEqual($returnA[1], $ticket->getReturnDate()->getTimestamp());
-            self::assertLessThanOrEqual($departA[1], $ticket->getDepartDate()->getTimestamp());
         }
     }
 
@@ -110,7 +96,7 @@ class TicketsTest extends TestCase
         $depart = (new DateTime('now'))->format('Y-m-d');
         $return = (new DateTime('now'))->add(new DateInterval('P28D'))->format('Y-m-d');
 
-        $client = $this->getClient('week_matrix', true);
+        $client = $this->getClient('tickets/week_matrix', true);
         $this->service->setClient($client->reveal());
         $tickets = $this->service->getWeekMatrix($origin, $destination, $depart, $return);
 
@@ -128,16 +114,16 @@ class TicketsTest extends TestCase
         ];
 
         foreach ($tickets as $ticket) {
-            self::assertEquals($origin, $ticket->getOrigin()->getIata());
-            self::assertEquals($destination, $ticket->getDestination()->getIata());
+            self::assertInstanceOf(City::class, $ticket->getOrigin());
+            self::assertInstanceOf(City::class, $ticket->getDestination());
             self::assertGreaterThan(0, $ticket->getValue());
             self::assertGreaterThan(0, $ticket->getDistance());
 
-            self::assertGreaterThanOrEqual($departA[0], $ticket->getDepartDate()->getTimestamp());
-            self::assertGreaterThanOrEqual($returnA[0], $ticket->getReturnDate()->getTimestamp());
+            self::assertTrue($departA[0] >= $ticket->getDepartDate()->getTimestamp());
+            self::assertTrue($returnA[0] >= $ticket->getDepartDate()->getTimestamp());
 
-            self::assertLessThanOrEqual($returnA[1], $ticket->getReturnDate()->getTimestamp());
-            self::assertLessThanOrEqual($departA[1], $ticket->getDepartDate()->getTimestamp());
+            self::assertFalse($returnA[1] <= $ticket->getDepartDate()->getTimestamp());
+            self::assertFalse($departA[1] <= $ticket->getDepartDate()->getTimestamp());
         }
     }
 
@@ -147,13 +133,13 @@ class TicketsTest extends TestCase
         $destination = 'HKT';
         $date = (new DateTime('now'))->format('Y-m');
 
-        $client = $this->getClient('calendar', true);
+        $client = $this->getClient('tickets/calendar', true);
         $this->service->setClient($client->reveal());
         $tickets = $this->service->getCalendar($origin, $destination, $date);
 
         foreach ($tickets as $ticket) {
-            self::assertEquals($origin, $ticket->getOrigin()->getIata());
-            self::assertEquals($destination, $ticket->getDestination()->getIata());
+            self::assertInstanceOf(City::class, $ticket->getOrigin());
+            self::assertInstanceOf(City::class, $ticket->getDestination());
             self::assertGreaterThan(0, $ticket->getValue());
         }
     }
@@ -179,21 +165,21 @@ class TicketsTest extends TestCase
             $month->modify('last day of next month')->getTimestamp(),
         ];
 
-        $client = $this->getClient('cheap', true);
+        $client = $this->getClient('tickets/cheap', true);
         $this->service->setClient($client->reveal());
         $tickets = $this->service->getCheap($origin, $destination, $depart, $return);
 
         /** @var Ticket $ticket */
         foreach ($tickets as $ticket) {
-            self::assertEquals($origin, $ticket->getOrigin()->getIata());
-            self::assertEquals($destination, $ticket->getDestination()->getIata());
+            self::assertInstanceOf(City::class, $ticket->getOrigin());
+            self::assertInstanceOf(City::class, $ticket->getDestination());
             self::assertGreaterThan(0, $ticket->getValue());
 
-            self::assertGreaterThanOrEqual($departA[0], $ticket->getDepartDate()->getTimestamp());
-            self::assertGreaterThanOrEqual($returnA[0], $ticket->getReturnDate()->getTimestamp());
+            self::assertTrue($departA[0] >= $ticket->getDepartDate()->getTimestamp());
+            self::assertTrue($returnA[0] >= $ticket->getDepartDate()->getTimestamp());
 
-            self::assertLessThanOrEqual($returnA[1], $ticket->getReturnDate()->getTimestamp());
-            self::assertLessThanOrEqual($departA[1], $ticket->getDepartDate()->getTimestamp());
+            self::assertFalse($returnA[1] <= $ticket->getDepartDate()->getTimestamp());
+            self::assertFalse($departA[1] <= $ticket->getDepartDate()->getTimestamp());
         }
     }
 
@@ -218,21 +204,21 @@ class TicketsTest extends TestCase
             $month->modify('last day of next month')->getTimestamp(),
         ];
 
-        $client = $this->getClient('direct', true);
+        $client = $this->getClient('tickets/direct', true);
         $this->service->setClient($client->reveal());
 
         /** @var Ticket $ticket */
         $ticket = $this->service->getDirect($origin, $destination, $depart, $return);
 
-        self::assertEquals($origin, $ticket->getOrigin()->getIata());
-        self::assertEquals($destination, $ticket->getDestination()->getIata());
+        self::assertInstanceOf(City::class, $ticket->getOrigin());
+        self::assertInstanceOf(City::class, $ticket->getDestination());
         self::assertGreaterThan(0, $ticket->getValue());
 
-        self::assertGreaterThanOrEqual($departA[0], $ticket->getDepartDate()->getTimestamp());
-        self::assertGreaterThanOrEqual($returnA[0], $ticket->getReturnDate()->getTimestamp());
+        self::assertTrue($departA[0] >= $ticket->getDepartDate()->getTimestamp());
+        self::assertTrue($returnA[0] >= $ticket->getDepartDate()->getTimestamp());
 
-        self::assertLessThanOrEqual($returnA[1], $ticket->getReturnDate()->getTimestamp());
-        self::assertLessThanOrEqual($departA[1], $ticket->getDepartDate()->getTimestamp());
+        self::assertFalse($returnA[1] <= $ticket->getDepartDate()->getTimestamp());
+        self::assertFalse($departA[1] <= $ticket->getDepartDate()->getTimestamp());
     }
 
     public function testGetMonthly(): void
@@ -240,13 +226,13 @@ class TicketsTest extends TestCase
         $origin = 'MOW';
         $destination = 'HKT';
 
-        $client = $this->getClient('monthly', true);
+        $client = $this->getClient('tickets/monthly', true);
         $this->service->setClient($client->reveal());
         $tickets = $this->service->getMonthly($origin, $destination);
 
         foreach ($tickets as $ticket) {
-            self::assertEquals($origin, $ticket->getOrigin()->getIata());
-            self::assertEquals($destination, $ticket->getDestination()->getIata());
+            self::assertInstanceOf(City::class, $ticket->getOrigin());
+            self::assertInstanceOf(City::class, $ticket->getDestination());
             self::assertGreaterThan(0, $ticket->getValue());
         }
     }
@@ -255,14 +241,14 @@ class TicketsTest extends TestCase
     {
         $origin = 'LED';
 
-        $client = $this->getClient('city_direction', true);
+        $client = $this->getClient('tickets/city_direction', true);
         $this->service->setClient($client->reveal());
         $tickets = $this->service->getPopularRoutesFromCity($origin);
 
         /** @var Ticket $ticket */
         foreach ($tickets as $ticket) {
-            self::assertEquals($origin, $ticket->getOrigin()->getIata());
-            self::assertStringMatchesFormat('%c%c%c', $ticket->getDestination()->getIata());
+            self::assertInstanceOf(City::class, $ticket->getOrigin());
+            self::assertInstanceOf(City::class, $ticket->getDestination());
             self::assertGreaterThan(0, $ticket->getValue());
         }
     }
@@ -271,15 +257,13 @@ class TicketsTest extends TestCase
     {
         $iata = 'SU';
 
-        $client = $this->getClient('airline_directions', true);
+        $client = $this->getClient('tickets/airline_directions', true);
         $this->service->setClient($client->reveal());
         $directions = $this->service->getAirlineDirections($iata, 10, true);
 
         foreach ($directions as $dir) {
-            $origin = $dir['origin'];
-            $destination = $dir['destination'];
-            $this->assertNotEmpty($origin->getIata());
-            $this->assertNotEmpty($destination->getIata());
+            $this->assertInstanceOf(City::class, $dir['origin']);
+            $this->assertInstanceOf(City::class, $dir['destination']);
             $this->assertGreaterThan(0, $dir['rating']);
         }
     }
@@ -288,7 +272,13 @@ class TicketsTest extends TestCase
     {
         $travel = new Travel('DUMMY_TOKEN');
 
+        /** @var ObjectProphecy|DataServiceInterface $dataService */
+        $dataService = $this->prophesize(DataServiceInterface::class);
+        $dataService->getPlace(Argument::type('string'))->willReturn(new City());
+        $dataService->getAirport(Argument::type('string'))->willReturn(new Airport());
+        $dataService->getAirports(true)->willReturn([new Airport()]);
         $this->service = $travel->getTicketsService();
+        $this->service->setDataService($dataService->reveal());
 
         date_default_timezone_set('UTC');
     }
