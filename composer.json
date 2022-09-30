@@ -13,8 +13,7 @@
         "php": ">=7.4",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle":"7.4.*",
-        "it-for-free/array_column": "v1.1.*"
+        "guzzlehttp/guzzle":"7.4.*"
     },
     "require-dev": {
         "phpunit/phpunit": "9.5.*",
@@ -35,6 +34,11 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\TravelPayouts\\" : "tests/travelPayouts"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
